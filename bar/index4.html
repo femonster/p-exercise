@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style type="text/css">
+	*{margin: 0;padding: 0;}
+		.ver-header {
+	    width: 60px;
+	    height: 100%;
+	    min-height: 575px;
+	    position: fixed;
+	    z-index: 1100;
+	    left: 0;
+	    font-size: 16px;
+	    background-color: #0a0d26;
+	    display: none
+	}
+
+	.ver-header .header-logo {
+	    width: 100%;
+	    height: 70px;
+	    margin-bottom: 10px
+	}
+
+	.ver-header .header-logo a {
+	    display: block;
+	    width: 30px;
+	    height: 30px;
+	    margin: 0 auto;
+	    padding-top: 20px
+	}
+
+	.ver-header .header-nav {
+	    width: 100%;
+	    margin-top: 10px
+	}
+
+	.ver-header .header-nav .header-nav-item {
+	    width: 100%;
+	    height: 70px;
+	    /*line-height: 70px;*/
+	    text-align: center
+	}
+
+	.ver-header .header-nav .header-nav-item a {
+	    display: inline-block;
+	    width: 50px;
+	    height: 30px;
+	    line-height: 30px;
+	    background-size: 120%;
+	    color: #ffd600
+	}
+
+	.ver-header .header-nav .header-nav-item .live {
+	    color: #ffd600;
+	    background: url(http://a.xnimg.cn/wap/pcLive/dist/img/live.png) no-repeat;
+	    background-position-y: 12px;
+	    background-position-x: 50%
+	}
+
+	.ver-header .header-nav .header-nav-item .home {
+	    background: url(http://a.xnimg.cn/wap/pcLive/dist/img/home.png) no-repeat;
+	    background-position-x: 50%;
+	    background-position-y: 10px
+	}
+
+	.ver-header .header-nav .header-nav-item .rankList {
+	    background: url(http://a.xnimg.cn/wap/pcLive/dist/img/rankList.png) no-repeat;
+	    background-position-x: 50%;
+	    background-position-y: 7px
+	}
+
+	.ver-header .header-nav .header-nav-item .shop {
+	    background: url(http://a.xnimg.cn/wap/pcLive/dist/img/shop.png) no-repeat;
+	    background-position-x: 50%;
+	    background-position-y: 11px
+	}
+
+	.ver-header .header-nav .header-nav-item .program {
+	    background: url(http://a.xnimg.cn/wap/pcLive/dist/img/program.png) no-repeat;
+	    background-position-x: 50%;
+	    background-position-y: 11px
+	}
+
+	.ver-header .ver-header-user {
+	    position: relative;
+	    cursor: pointer;
+	    font-size: 14px
+	}
+
+	.ver-header .ver-header-user .user-img {
+	    width: 34px;
+	    height: 34px;
+	    line-height: 34px;
+	    margin: 0 auto;
+	    border-radius: 3px;
+	    background-color: #eee
+	}
+
+	.ver-header .ver-header-user .user-img img {
+	    width: 100%;
+	    height: 100%
+	}
+
+	.ver-header .ver-header-user .user-name {
+	    text-align: center;
+	    margin-top: 8px;
+	    color: #fff
+	}
+
+	.ver-header .ver-header-user .guo-img {
+	    display: block;
+	    margin: 6px auto
+	}
+
+	.ver-header .ver-header-user .token-num {
+	    text-align: center
+	}
+
+	.ver-header .ver-header-user .user-sub {
+	    position: absolute;
+	    width: 426px;
+	    top: 0;
+	    left: 60px;
+	    background-color: rgba(0,0,0,.6);
+	    color: #fff;
+	    z-index: 1000;
+	    overflow: hidden;
+	    -webkit-transition: opacity .3s linear,visibility .3s linear;
+	    transition: opacity .3s linear,visibility .3s linear;
+	    display: none;
+	    box-shadow: 2px 2px 3px rgba(0,0,0,.4)
+	}
+
+	.ver-header .ver-header-user .user-sub .user-main {
+	    width: 100%;
+	    height: 170px
+	}
+
+	.ver-header .ver-header-user .user-sub .user-main .userImg {
+	    width: 100px;
+	    height: 100px;
+	    border-radius: 50%;
+	    display: inline-block;
+	    margin-top: 20px;
+	    margin-left: 20px
+	}
+
+	.ver-header .ver-header-user .user-sub .user-main .userImg img {
+	    display: block;
+	    height: 100%;
+	    width: 100%;
+	    border-radius: 50%
+	}
+
+	.ver-header .ver-header-user .user-sub .user-main .userInfo {
+	    width: 170px;
+	    height: 100px;
+	    display: inline-block;
+	    position: absolute;
+	    margin-left: 12px;
+	    margin-top: 30px
+	}
+
+	.ver-header .ver-header-user .user-sub .user-main .userInfo .userName {
+	    display: inline-block;
+	    max-width: 120px;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+	    font-size: 20px
+	}
+
+	.ver-header .ver-header-user .user-sub .user-main .userInfo .isVip {
+	    height: 15px;
+	    width: 42px;
+	    margin-left: 5px
+	}
+
+	.ver-header .ver-header-user .user-sub .user-main .userInfo .userId {
+	    margin-top: 5px
+	}
+
+	.ver-header .ver-header-user .user-sub .user-main .userInfo .contr-value {
+	    margin-top: 15px;
+	    display: inline-block;
+	    width: 14px;
+	    line-height: 20px;
+	    height: 20px;
+	    font-size: 14px;
+	    border-radius: 10px;
+	    padding-left: 20px;
+	    background-image: url(http://a.xnimg.cn/wap/pcLive/dist/img/public/grade/crown1.png);
+	    background-position: 9% 50%;
+	    background-size: 45% 100%;
+	    background-repeat: no-repeat;
+	    margin-right: 10px;
+	    text-align: right;
+	    padding-right: 10px
+	}
+
+	.ver-header .ver-header-user .user-sub .user-main .userInfo .charm-value {
+	    display: inline-block;
+	    width: 14px;
+	    height: 20px;
+	    line-height: 20px;
+	    font-size: 14px;
+	    border-radius: 10px;
+	    padding-left: 20px;
+	    background-image: url(http://a.xnimg.cn/wap/pcLive/dist/img/public/grade/crown1.png);
+	    background-position: 9% 50%;
+	    background-size: 45% 100%;
+	    background-repeat: no-repeat;
+	    background-color: red;
+	    margin-left: 10px;
+	    text-align: right;
+	    padding-right: 10px
+	}
+
+	.ver-header .ver-header-user .user-sub .userCenterBox {
+	    width: 100%;
+	    height: 110px;
+	    font-size: 12px;
+	    text-align: center;
+	    background-color: rgba(0,0,0,.6);
+	    padding-top: 10px
+	}
+
+	.ver-header .ver-header-user .user-sub .userCenterBox li {
+	    float: left;
+	    width: 56px;
+	    height: 100px;
+	    margin-left: 42px
+	}
+
+	.ver-header .ver-header-user .user-sub .userCenterBox li a {
+	    color: #fff
+	}
+
+	.ver-header .ver-header-user .user-sub .userCenterBox .pensonCenter .pensonCenterIcon {
+	    width: 100%;
+	    height: 56px;
+	    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo5N2Q1OWYyMi1jYjBjLTQxMTktYTgyZi04Mjg2MDhkYmE4OTYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RDNENUJGOTExM0E4MTFFN0EwMzFFNDkxM0RGNUUzMTYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RDNENUJGOTAxM0E4MTFFN0EwMzFFNDkxM0RGNUUzMTYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpmYmI4MGRmMy1lZmJlLTQ1NGQtYTI0NC02MTgwODYxMTNiYjgiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDowNDZlNDU3ZS1lYWFmLTExNzktYTA2ZC04NzNkZDk3NTMwODAiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6hb3CVAAAD5klEQVR42tSau08UURTG7w6sK8+siqDERqPiVrqIj9hhZaUW2oiaaKEhkUSNNmKlWS0tiCFaSIKCMfEV/wBpNRHRhKwCJhYkJD4IIAjC8vAc51sdVnbmPmYH+JJfQpa5d86ZuXPuOWcmNNcu/FA5UUvsJbYRG4m1RBH+/5P4RnwmPhKviA7iq+mJQwYOrCFOEseInTyX4vg5opNgC1qJwaAcWE9cIs46rrCpxol7xE1iQGWgpXBsPnGZ6CUu+mg8q5A4R/TgHGG/78AW4hERF8HoHVFHJP24A4eINwEaz9pBvCYOmzpwhnhClIrgVUw8hg1aDtQTd4g8sXjKgw31qg4cJJrE0lETbJJyIEa0GV35Qmxt5fjbnzvRBtv+C41Ocfh6iPWnZ/hWIprx+zCC77jxM8G27SJS2e7AeWK71vS8K1QvYLzAb7uJfcQmxd1nvti2C9n2gUpsJHpXv0Zh5HeiW9uJMaIqvWM7r8UVbeNXKY4swxj9pdSYuYR4ytPaU0Y1xqw2eh5Owea/DhwnCrSnC2vGFX0VwOZ5Diw31aUdKEf8WG7iGqSSHdivUYy47ya5GpORSXMVyA7sMZqmCPdQpwg1ryhqLNSwZtdhMcbaqmIHNhtNMQaCGpdRaLEDFcbTdCsaM2a0EztVwQ6UGE/zC8XfnGQvIokx5iqxhF/iTLNf4rh+46zUqSl2YNS36bhtNevy/1kc459GORp/MV5GK5EPRT1SZQt55AgwvxND7MAnrUhUilheBgdktQ6wJoXdcOQG4w8tB/rYAe5VHlBKo2I+9SkixAYwDEvUHu4eC/0XOa1AxyYXTRZefnGcQ16d7ECHZAC0e86RHKZnEZSccmKbX1p4iN96Hu7PlieXI8kFd7Z5IH3oA6m1bwXggCUdFNqdBQ07MLFkMn3vJI9tbXU6wH2CFtchqQAd8D5XC2yetygSrinZlNB8h6KoQZzLPRVMZHYlBPos11yHcpweyqHxIziHu64Lx1uczBccYewLcc8qrBQU4QEPayyTCVzPUeCdknehgkxlc+BPkSDsFxpq21U+4ngYhBx17zSidgpM4jfFxE3Y/b9er9K6jzhBPFXq3kxrGSWrGbR+eheKugvpBdGwhFooDbBJyDrAahb2q9SZRTR8BjY0u+17brpLHNFOds3Ej/RR2CB0HWA9x8PTFaDx7xFtnslkHlKFg7C/g2jMccrBc18V9uuQpMwAlfSM98cbCLO3hP0Bh58tgdvCfkGV8NyLnWmTwcceZQi33CWuFnofe3BKzC/v7qdzG+W8z6fPbbhSqMW6jYl/n9sUOx7I9Oc2H7Dbd6AWMdJvAQYA0HnIYMwOz0sAAAAASUVORK5CYII=) 50% 50% no-repeat;
+	    background-size: 90% 90%;
+	    margin-bottom: 5px
+	}
+
+	.ver-header .ver-header-user .user-sub .userCenterBox .myGiftCertificate .myGiftCertificateIcon {
+	    width: 100%;
+	    height: 56px;
+	    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo5N2Q1OWYyMi1jYjBjLTQxMTktYTgyZi04Mjg2MDhkYmE4OTYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDI4NTY5NTIxNDRCMTFFNzk0NDNFRkY4NDgwREZFNzMiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDI4NTY5NTExNDRCMTFFNzk0NDNFRkY4NDgwREZFNzMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpmYmI4MGRmMy1lZmJlLTQ1NGQtYTI0NC02MTgwODYxMTNiYjgiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDowNDZlNDU3ZS1lYWFmLTExNzktYTA2ZC04NzNkZDk3NTMwODAiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7I3hylAAAE80lEQVR42tRabWwUVRQ9/TCmtTUIlQoxgkopBYyCRo3ByCoRE6X4w0aiCNEfEhS0KP7QqhEVTTTaGjSIiTGpfAoGhB+GSiwmxIixoBKobRGiaKXQSii2BrSs53beyOzuvLfT3XntcJMTyr6dO+fOe+/ee95OTnzGuwjBRhIx4mZiAnElcSlxkRrvIY4Th4mfiG+IRuJYtjfOz+LaEcQ84gHieiLH8N0LieFEOXGX+ixONBFriXqiKxMSuRlcM4p4i/iFeJu4IQ15neWoa8XHr8QKYrTNAGS2niFaiac8yyMMKyQWES3qHheEHUAZ8S3xBlEEe1ak7iH3mhhWALOJ74gpGDy7jthN3JttAI8SnxIXY/BNZmOT4pBRAAuJVUQehs7yFIeFAw2gUmWFqNgKxSlQABXEmiF+8n4zsUZxMwYg6Wud5UyTzZ5Yl5xikwOoJq5FdE24LdEFIFXwRUTfXvBWbG8v9FzK0pnGVHwr+66C06luuvnVz+8A9pc7/x9+Arh7B9s4dgX5fdnTPM2VcoC+t7NH7C1IXko1xOP9/YjqRktUP3Lum3fuBOZuMt/kLCfwTfrpLmb4dWwuesN/3u2XAcu5sk8lPNu/iSuITncJzU0gLzapJb3zs+zHJjcD9zTYId+/sI86KyHRChRneANItNoFrIOzzM7fYZHcwGr//nxg7zV2AthY6SzVVHvQDUDEyFTfiw+MNzt3x+OciZar7QTQXKYbEQ0yWgK43befL6G+qNxudl61DRh2Eri8HZj+tZ0AhENJl05PxGQT16r8n2j1i6KVPOf5St+6fKVhU+31J5wnPO6w3ulurryG6UAxJe/89cAlJ8MnfpDyeqN2L5bLEhrnv/a4vjfMNjv/kHK47SpgDzfwjtvsPHnh0Kzdi2USQKk+hXWkSXGe8VEd9tKo3kplD8R9h6o/YOexn32goar2FDrVsrA3WN3IxPrYiH4/yUnZIZ1KJBnjz43b3cD6M48zMgPd/KPYdzi2C3h4vd7xsqXAz2OV+PzYr2Jmbx/NARqn6Ua7ZAY6jH2IyX73jP9RaufpmzmckAAO+g5VtAH3f2Z2/gj1RdkhYMo+YMZXdgIQDhPadKNt530hy1XnL6m29CXu/slmp9KrV7/K7pxS4uhIO8SFw9PLdKNNEkCjk0qS7BglwtaZZuefsFP8cxhwhAJp5y12AhAOx0do0h++dDfxHu0+MNnEVpXm6Gv8ITsB6DkI53ZXUq5W7ek5W7LK2Zwme5LFriHmyMmpP9oJoGor8G+enyZY6y1kq5VMC64F+q/mk99XAWyb6VRlGybpeddNyZ8K13qvqO+UkkE8lrBBRUxLcQoi6mueBWZ9AYw5YlvUQ3Ht9Ip691ilJaKHWl77C84vPe3JvZB88PJ5cC70ikver5mrI/ZGmLxwqzV1o/9I8ZYVHkHyp4g5iqOxnZbE+5B04hEi36eOflqD6gEmXyyOUACLFacBCZqVxIIhnok+xWGlthSlccBSi/uGaE9IuqxSHJBpAGJb4PwgPZjZ6QdCyu/mtM1AQIeyseU9iJqUliNcE9/PEzdKMxPkgoGI+jPEa3B+9JZc3BMicTnafo+QBmy5uhfCDuB/JQznVYOx6t8mXz0R6Dij/1rxMQbOqwa/DfjAIqTXbUTRx9S6lV8S3ddtijwb0n3dplmpwEbjgUJA+0+AAQAYtzJEQ/+2wwAAAABJRU5ErkJggg==) 50% 50% no-repeat;
+	    background-size: 90% 90%;
+	    margin-bottom: 5px
+	}
+
+	.ver-header .ver-header-user .user-sub .userCenterBox .myCar .myCarIcon {
+	    width: 100%;
+	    height: 56px;
+	    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2xpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDoxQjk4NDI2RUIzMjA2ODExODA4M0Q5RTQ5MDRENzEwMSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5MTNCOTJGQzA0N0UxMUU3OUNCMThCRjI3NDY2QUQ0RSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5MTNCOTJGQjA0N0UxMUU3OUNCMThCRjI3NDY2QUQ0RSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxNSAoTWFjaW50b3NoKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkRDRjU3MDlFNDkyMDY4MTE4MDgzOTgxRDA3RTUyNkU4IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjFCOTg0MjZFQjMyMDY4MTE4MDgzRDlFNDkwNEQ3MTAxIi8+IDwvcmRmOkRl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) 50% 50% no-repeat;
+	    background-size: 90% 90%;
+	    margin-bottom: 5px
+	}
+
+	.ver-header .ver-header-user .user-sub .userCenterBox .myGuard {
+	    color: #878787
+	}
+
+	.ver-header .ver-header-user .user-sub .userCenterBox .myGuard .myGuardIcon {
+	    width: 100%;
+	    height: 56px;
+	    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo5N2Q1OWYyMi1jYjBjLTQxMTktYTgyZi04Mjg2MDhkYmE4OTYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NUMwN0U5NEIxNDRDMTFFNzlFQkFFQTM1RDFCOUQxRjkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NUMwN0U5NEExNDRDMTFFNzlFQkFFQTM1RDFCOUQxRjkiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2OTE5MGJjOS04OTM1LTQyODUtOGQ4ZS0wZGFkNTRlNzBkZmMiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDowNDZlNDU3ZS1lYWFmLTExNzktYTA2ZC04NzNkZDk3NTMwODAiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5g79xMAAAFRklEQVR42tSa309cRRTHZ+8uPxaW3z8WNgQELCAQRFjR8IZPPqlvGqtN9MGkahM16YtVHzT6YKI1adToS2PT1oRoavwD7KsYsTEhSGsTApQF5IfA7kJYAvR8Z+eud3/cO3P33qVykk8Iu3dmzpk5c86ZuesZHx9nLkgjMUY8SfQQ7UQDUS6+jxOrxCwxQ/xK3CT+cTqwz0HbOuIM8SIxTHgsni0haolu4mnx2RExSVwnrhDr+Sih5dGmmfiMmCM+J8IS5c3EI9qij3niEhEqpAFYrfPEHeIdg3u4IWXEm8RtMUaR2wacIn4jPiUCrHASEGNgrF63DHiW+J14jB2fDBITxHNODXiN+JGoZMcvWI0fhA55GXCW+IbwsgcnXqHDWbsGPCOiwv9FLgmdlAx4hLj2gGc+10pcE7pZJjKEr+/zjTRHR0dsZ2eHbW5upmhtbWWlpaUpioqKnOwJ6PY4sW9mwFvEo7KeDg8P2e7ubopYLJbi4OAg7dn9/X1ONBpNZi+PhxUXF6eAQcDn8/HvJALd3hahNssAZMEPcrWampriSiQSCc7e3l7evoBVQvtcfXi93jQaGxtzdfE+cZWIZBrwrpnrLC8vH4ujY/WMK2hiAHS8QLxh3MT1xKvs5MgrQueUAS8R/hNkgF/onGbASZPTugFwtKFCjLC+vs7m5+cLZQDOICFs4qfyrOctBVFmYWGBLS4usvr6elZWVub2ENB5DCvwhNs9I1TOzs7yiILwOzExwT8rgIQ1cYZ1VZaWllg8Hk/9v7a2xmZmZgphQDdc6GG3Yvj29jbb2tpiGxsbWd9PT0/zbBwKhVhTUxPPvC7IKfQSdNLD6uoqr3mgnJWboPyYm5vjaJrGGhoaWEtLC+vo6HAyfBAuVOF0GjDzdnwcxqysrLixAhWa0x4wk7W1tbbbtbW1OZ19SAIGRKXnTk2TKoNSWVUqKyvZ8PCwdYz0KEX2KDSTriXKXpmBnZ2dSoNi846OjvJq0/IE41U6T/0LA+5KTxIB+flG9bBSUlLCKirk2042aUL+hgHSAF1TU+NqklMRRZe8rYn7F0sxqcvzVk7p/BhQOtVOwgDcEluO7Pf7eT2jEh6NM4ik1dvbyzdtrmfMBHWTQqKDzr/4xCb+Q1R3ptLe3s5LAtmyQ1m4HIyGIFT29fXxDI3iTuV0p+iy0Dmim3lVZkBVVRWf0UgkYvpMT0+PZXvQ399vnZlog2OjK8h144EGBuxKK6fu7kKUxf/d6VAUq6urU3kUul4xGgDfuCy9XaLYPDAw4FYhlpVLgsGgNGkKuSx0TruZ+5iIqUSHwcFB1USjdjKhBIgKVTH2x4SuLNMAOPeHKj1UV1ezoaEhJ7dsaTPf3NxspxT5SL8TyjQA8gVxS6UXbMiRkRH+N1/BZkVJbUN56HYxbQIyHsCd4/OokJXuNihUhsNhfv9pV/SoZmM/oeh8gRnuRXMZwOsL4mUcslT9t6urixuiWuNAcUQbxYqTCV1w9XMnywVNGvxMnLMzo9gXcClkXj2JZVah+inMTukt5JzQKbtfi0ZfC8u/YorvCjCjmF1sSpy4kHnh53CX8vJyOzNunPnXiW9Ny3NJB2iIt+nfMRvvyfSwCBwIwiVepN+wjGIKHf3Eki+kb7Hjkz/FfdUNaRhW7BAbG7+DuKBScjgQ9P0eMYKbGKU8YucATXzCki+9EYvjLiq+Q3xJdIksm1BOhHkMtsiSPzV4SPydlJ0nLOr5SdFHG0v+1OCe3U6cVGVrYiUuisuxMeG3eJOo/9wmYNiQ+s9t/hKnwJsqFwoyuS/AAFdoZzrZN48nAAAAAElFTkSuQmCC) 50% 50% no-repeat;
+	    background-size: 90% 90%;
+	    margin-bottom: 5px
+	}
+
+	.ver-header .ver-header-user .user-sub .user-oper {
+	    float: right;
+	    width: 75px;
+	    margin-top: 30px;
+	    margin-right: 20px;
+	    color: #000
+	}
+
+	.ver-header .ver-header-user .user-sub .user-oper li {
+	    background-color: #ffd600;
+	    border-radius: 3px;
+	    margin-bottom: 10px;
+	    line-height: 32px;
+	    text-align: center;
+	    width: 100%;
+	    font-size: 14px;
+	    cursor: pointer
+	}
+
+	.ver-header .ver-header-user .user-sub .user-oper li a {
+	    color: #000;
+	    display: block;
+	    width: 100%;
+	    height: 100%
+	}
+
+	.ver-header .ver-header-user .user-sub .user-oper li .logout {
+	    color: #565658;
+	    background-color: #d4d5da
+	}
+
+	.ver-header .ver-header-user .user-sub .userTokens {
+	    display: block;
+	    margin-top: 10px;
+	    margin-left: 130px;
+	    color: #fff;
+	    font-size: 16px
+	}
+
+	.ver-header .ver-header-user .user-sub .userTokens img {
+	    display: inline;
+	    margin: 0 auto
+	}
+
+	.ver-header .ver-header-user .user-sub .operHover {
+	    padding: 8px 0
+	}
+
+	.ver-header .header-bottom {
+	    position: absolute;
+	    bottom: 30px;
+	    width: 100%
+	}
+
+	.ver-header .header-bottom .header-oper {
+	    height: 80px;
+	    line-height: 44px;
+	    cursor: default;
+	    text-align: center
+	}
+
+	.ver-header .header-bottom .header-oper .header-log-btn,.ver-header .header-bottom .header-oper .header-reg-btn {
+	    display: inline-block;
+	    width: 50px;
+	    height: 25px;
+	    color: #fff;
+	    text-align: center;
+	    line-height: 25px;
+	    border-radius: 3px;
+	    cursor: pointer;
+	    font-size: 14px;
+	    box-shadow: 1px 1px 1px 0 rgba(0,0,0,.6)
+	}
+
+	.ver-header .header-bottom .header-oper .header-log-btn {
+	    background-color: rgba(53,162,231,.8)
+	}
+
+	.ver-header .header-bottom .header-oper .header-log-btn:hover {
+	    background-color: #35a2e7
+	}
+
+	.ver-header .header-bottom .header-oper .header-reg-btn {
+	    background-color: rgba(105,105,105,.7)
+	}
+
+	.ver-header .header-bottom .header-oper .header-reg-btn:hover {
+	    background-color: #696969
+	}
+
+</style>
+</head>
+<body>
+	<div class="ver-header" style="display: block;">
+        <div class="header-logo">
+            <a href="http://zhibo.renren.com/">
+                <img src="http://a.xnimg.cn/wap/pcLive/src/apps/liveroom/img/logo-ver.png">
+            </a>
+        </div>
+        
+            <div class="ver-header-user">
+                <div class="user-info">
+                    <div class="user-img">
+                        <img src="http://head.xiaonei.com/photos/0/0/men_tiny.gif" class="head-img">
+                    </div>
+                    <p class="user-name">张耕恺</p>
+                </div>
+                <div class="user-sub" style="display: none;">
+                    <div class="user-main">
+                        <div class="userImg">
+                            <img src="http://head.xiaonei.com/photos/0/0/men_tiny.gif" class="headImg" alt="张耕恺">
+                        </div>
+                        <div class="userInfo">
+                            <span class="userName">张耕恺</span><img class="isVip" src="http://a.xnimg.cn/wap/pcLive/dist/img/vip_icon_grey.png">
+                            <div class="userId">(577984877)</div>
+                            <span class="contr-value" style="background-image: url(&quot;http://a.xnimg.cn/wap/pcLive/dist/img/public/grade/star.png&quot;); background-color: rgb(254, 226, 51);">1</span><span class="charm-value" style="background-image: url(&quot;http://a.xnimg.cn/wap/pcLive/dist/img/public/charmgrade/1_25.png&quot;); background-color: rgb(253, 103, 162);">1</span>
+                        </div>
+                        <ul class="user-oper">
+                            <li><a href="http://zhibo.renren.com/anchor/577984877" class="anchor-home">直播空间</a></li>
+                            <!-- <li><a href="http://zhibo.renren.com/recharge#nav=1" class="user-center">个人中心</a></li> -->
+                            <li class="play-start" style="display: list-item;">我要开播</li>
+                            <li><a href="http://www.renren.com/Logout.do?origURL=http://zhibo.renren.com/liveroom/1401251" class="logout">退出</a></li>
+                        </ul>
+                        <a href="http://zhibo.renren.com/personcenter/index#nav=3" class="userTokens">人人果：<span class="token-num" style="color:#ffd600">0</span>
+                            <img src="http://a.xnimg.cn/wap/pcLive/dist/img/token.png" class="guo-img" alt="人人果">
+                        </a>
+                    </div>
+                    <ul class="userCenterBox">
+                        <li class="pensonCenter">
+                            <a href="http://zhibo.renren.com/personcenter/index#nav=1" target="_blank">
+                                <div class="pensonCenterIcon"></div>
+                                <div class="pensonCenterText">个人中心</div>
+                            </a>
+                        </li>
+                        <li class="myGiftCertificate">
+                            <a href="http://zhibo.renren.com/personcenter/index#nav=4" target="_blank">
+                                <div class="myGiftCertificateIcon"></div>
+                                <div class="myGiftCertificateText">我的礼券</div>
+                            </a>
+                        </li>
+                        <li class="myCar">
+                            <a href="http://zhibo.renren.com/car/home#nav=0">
+                                <div class="myCarIcon"></div>
+                                <div class="myCarText">我的座驾</div>
+                            </a>
+                        </li>
+                        <li class="myGuard">
+                            <a href="javascript:;">
+                                <div class="myGuardIcon"></div>
+                                <div class="myGuard">我的守护(即将上线)</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        
+        <ul class="header-nav">
+            <li class="header-nav-item">
+                <a href="http://zhibo.renren.com/" class="live backface" data-hover="直播"></a>
+                <p>直播</p>
+            </li>
+            <li class="header-nav-item">
+                <a href="http://www.renren.com/" class="home backface" target="_blank" data-hover="主站"></a>
+                <p>主站</p>
+            </li>
+            <li class="header-nav-item">
+                <a href="http://zhibo.renren.com/car/home" class="shop backface" target="_blank" data-hover="商城"></a>
+                <p>商城</p>
+            </li>
+            <li class="header-nav-item">
+                <a href="http://zhibo.renren.com/rank" class="rankList backface" target="_blank" data-hover="排行榜"></a>
+                <p>排行榜</p>
+            </li>
+            <li class="header-nav-item">
+                <a href="http://zhibo.renren.com/banner" class="program backface" target="_blank" data-hover="栏目"></a>
+                <p>栏目</p>
+            </li>
+        </ul>
+        <div class="header-bottom">
+            
+        </div>
+    </div>
+    <img src="bg.png" alt="" style="height: 100%;width: 100%;">
+</body>
+<style type="text/css">
+html,body{
+	width: 100%;
+	height: 100%;
+}
+.header-nav-item{
+	perspective: 1200px;
+	position: relative;
+}
+.backface,.header-nav-item p{
+	position: absolute;
+	left: 5px;
+}
+.backface{
+	transform: rotateY(0deg);
+    backface-visibility: hidden;
+    transition:transform 0.4s ease-out;
+
+}
+.header-nav-item p{
+	top: 0;
+	width: 50px;
+	height: 30px;
+	line-height: 30px;
+	color: #ffd600;
+	cursor: pointer;
+	transform: rotateY(-180deg);
+    backface-visibility: hidden;
+    transition:transform 0.4s ease-out;
+}
+.header-nav-item:hover .backface{
+	transform:rotateY(-180deg); 
+}
+.header-nav-item:hover p{
+	transform:rotateY(0deg); 
+}
+</style>
+</html>

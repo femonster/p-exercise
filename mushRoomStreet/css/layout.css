@@ -1,0 +1,64 @@
+/*layout*/
+			body{font-size: 12px;background-color: rgb(247,247,247);}
+			
+			a{text-decoration: none;}
+			
+			.clearfix:after{display: block;content: ".";height:0;clear: both;overflow: hidden;visibility: hidden;}
+			
+			.banner,.footer,.top-nav{width: 100%;min-width: 1200px;}
+			
+			.hot,.good,.footer-wrap,.love-nav,.love-wrap{width: 1200px;}
+			
+			.top-nav{height: 31px;background-color: #f2f2f2;border-bottom: 1px solid #ddd;position: relative;}
+			
+			.aside{position: fixed;right: 0;width: 30px;background-color: #202020;color: #ffffff;height: 100%;top: 0;z-index: 9999;}
+			
+			.serach-box{height: 90px;width: 100%;background-color: #FFFFFF;}
+			.serach{height: 90px;width: 1200px;position: relative;margin: 0 auto;background-color: #FFFFFF;}
+			
+			.banner{height: 480px;background-color:rgb(206,188,168);transition: .5s;}
+			
+			.hot{height: 150px;}
+			
+			.good{height: 336px;border-bottom-left-radius: 5px;border-top-left-radius: 5px;}
+			
+			.hot,.good{margin: 30px auto;}
+			
+			.love-nav{height: 55px;margin: 0 auto;}
+			
+			.love-wrap{margin: 0 auto;}
+			
+			.footer{height: 296px;background: url(../img/footer_bg.png) repeat-x;background-size:contain;}
+			
+			.footer-wrap{height: 100%;margin: 0 auto;}
+			
+			.love-nav{background:url(../img/xnxh/upload_1a302hd9d42jbhckfgflijd0h0jlh_2400x78.png_999x999.v1c0.png) no-repeat;
+				  background-size: 100%;}
+			
+			
+			@font-face {font-family: 'iconfont';
+		    src: url('../fonts/iconfont.eot'); /* IE9*/
+		    src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		    url('../fonts/iconfont.woff') format('woff'), /* chrome、firefox */
+		    url('../fonts/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+		    url('../fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+		   }
+		   .icon{
+		    font-family:"iconfont" !important;
+		    font-size:16px;font-style:normal;
+		    -webkit-font-smoothing: antialiased;
+		    -webkit-text-stroke-width: 0.2px;
+		    -moz-osx-font-smoothing: grayscale;
+		    }
+		    
+			.color1{color: rgb(197,170,151);}
+			.color2{color: rgb(170,91,234);}
+			.color3{color: rgb(254,87,133);}
+			.color4{color: rgb(254,197,46);}
+			.color5{color: rgb(99,147,249);}
+			.color6{color: rgb(82,178,252);}
+			.color7{color: rgb(150,101,254);}
+			.color8{color: rgb(172,92,232);}
+			.color9{color: rgb(113,215,103);}
+			.color10{color: rgb(233,94,199);}
+			.color11{color: rgb(10,199,143);}

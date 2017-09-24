@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3D图片轮播</title>
+	<style id="mystyle">
+	/*
+transform-style（preserve-3d） 建立3D空间(3d视角)
+Perspective 景深（你站在多远的位置看）
+Perspective- origin 景深基点
+Transform 新增函数
+rotateX()
+rotateY()
+rotateZ()
+translateZ()
+scaleZ()
+*/
+		*{margin: 0;padding: 0;}
+		li{list-style: none;}
+
+
+		.wrap{
+			width: 800px;
+			margin: 100px auto 0;
+		}
+		#picList{
+			width: 800px;
+			height: 360px;
+			perspective: 800px;
+			/*从中间（默认）看，左侧的会被盖住，右侧的盖不住，则会露出灰色面*/
+			perspective-origin:center;
+			
+		}
+		
+		
+		#picList li{
+			width:50px;
+			height: 360px;
+			position: relative;
+			transform-style:preserve-3d;
+			float: left;
+			transform-origin: center center -180px;
+			transition: 2s;
+
+
+		}
+
+		
+		#picList li a{
+			width:100%;
+			height: 100%;
+			display: block;
+			position: absolute;
+			top: 0;left: 0;
+			t
+		}
+		
+		#picList li a:nth-of-type(1){
+			background: url(img/1.jpg) no-repeat;
+		}
+		
+		#picList li a:nth-of-type(2){
+			background: url(img/2.jpg) no-repeat;
+			top: -360px;
+			transform-origin:bottom;
+			transform:rotateX(90deg);
+		}
+		
+		#picList li a:nth-of-type(3){
+			background: url(img/3.jpg) no-repeat;
+			transform: translateZ(-360px) rotateX(180deg);
+
+		}
+		
+		#picList li a:nth-of-type(4){
+			background: url(img/4.jpg) no-repeat;
+			top: 360px;
+			transform-origin:top;
+			transform: rotateX(-90deg);
+		}
+		#picList span{
+			display: block;
+			width: 360px;
+			height: 360px;
+			background-color: #999;
+			position: absolute;
+			top: 0;
+			left: 0;
+
+		}
+		#picList span:nth-of-type(1){
+			transform-origin: left;
+			transform: rotateY(90deg);
+		}
+		#picList span:nth-of-type(2){
+			transform-origin: left;
+			transform: rotateY(90deg) translateZ(50px);
+		}
+		#btns{
+			float: right;
+			padding: 10px 0;
+		}
+		
+		#btns li{
+			width: 40px;
+			height: 40px;
+			background-color: #000;
+			color: #fff;
+			border-radius: 50%;
+			font: 30px/40px Arial;
+			float: left;
+			text-align: center;
+			margin: 0 5px;
+			cursor: pointer;
+		}
+		
+		#btns .active{
+			background-color: #f60;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<ul id="picList">
+<!-- 			<li>
+				<a href="#"></a>
+ 				<a href="#"></a>
+				<a href="#"></a>
+				<a href="#"></a>
+				<span></span>
+				<span></span>
+			</li> -->
+		</ul>
+		<ol id="btns">
+			<li class="active">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ol>
+	</div>
+</body>
+<script type="text/javascript">
+	window.onload=function() {
+		var oPicUl = document.getElementById('picList');
+
+		var aPicList = oPicUl.getElementsByTagName('li');
+
+		var oStyle=document.getElementById('mystyle');
+
+		var abtns = document.getElementById('btns').getElementsByTagName("li");
+		// 每个li的宽
+		var iLiw = 50;
+		//一屏总共可以分为多少块
+		var iNum = oPicUl.offsetWidth/iLiw;
+		var sli = "";
+		var iZindex=0;
+		var scss="";
+		
+		for (var i = 0; i < iNum; i++) {
+			i>iNum/2?iZindex--:iZindex++;
+			sli+='<li><a href="#"></a><a href="#"></a><a href="#"></a><a href="#"></a><span></span><span></span></li>';
+			scss+="#picList li:nth-of-type("+(i+1)+") a{background-position:-"+i*iLiw+"px 0;}";
+			scss+="#picList li:nth-of-type("+(i+1)+"){z-index:"+iZindex+";}";
+		}
+		oPicUl.innerHTML=sli;
+		oStyle.innerHTML+=scss;
+
+		for (var i = 0; i < abtns.length; i++) {
+			abtns[i].index=i;
+			
+			abtns[i].onclick=function(){
+				for (var n = 0; n < abtns.length; n++) {
+					abtns[n].className="";
+				}
+				if (this.index==i) {
+					return;
+				}else{
+					this.className="active";
+					for (var j = 0; j < iNum; j++) {
+						aPicList[j].style.transition="0.3s "+j*30+"ms";
+						// transition: 2s;
+						aPicList[j].style.transform="rotateX(-"+this.index*90+"deg)";
+					}
+				}
+			}
+		}
+
+	}
+</script>
+</html>

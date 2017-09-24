@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>张耕恺个人简介</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<style>
+	/*public*/
+	.clearfix:after{display: block;content: ".";height:0;clear: both;overflow: hidden;visibility: hidden;}
+	body{margin:0;font-family: 'Roboto Condensed', sans-serif;background: #fff;}
+	body a{transition: 0.5s all;-webkit-transition: 0.5s all;-moz-transition: 0.5s all;-o-transition: 0.5s all;-ms-transition: 0.5s all;text-decoration:none;}
+	h1,h2,h3,h4,h5,h6{margin:0;	font-family: 'Overlock', cursive;}
+	p{margin:0;}
+	ul,label{margin:0;padding:0;}
+	body a:hover{text-decoration:none;}
+	.show{display: block;}
+	.hide{display: none;}
+
+/*banner 开始*/	
+	.banner {
+		background:url(img/zgk/skillsbg.jpg)no-repeat fixed 0px;
+		-webkit-background-size:cover;
+		background-size:cover;
+		-moz-background-size:cover;
+		position: relative;
+	}
+	.banner-info{
+		background: url(img/zgk/dott.png) repeat 0px 0px;
+		padding: 4em 0;
+	}
+	.header-left img {
+	    width: 100%;
+	    border: 5px solid rgba(255, 255, 255, 0.68);
+	}
+	.header-right {
+	    padding-left: 3em;
+	}
+	.header-right h1 {
+	    font-size: 2.5em;
+	    color: #fff;
+	    margin: 0.5em 0 0;
+	}
+	.header-right h2 {
+	    font-size: 1.2em;
+	    color: #000;
+	    background: #F3E000;
+	    display: inline-block;
+	    padding: .5em 1.5em;
+	    position: relative;
+	}
+	.header-right h2:before {
+	    width: 0;
+	    height: 0;
+	    position: absolute;
+	    content: '';
+	    bottom: -9px;
+	    left: 12px;
+	    border-style: solid;
+	    border-width: 10px 10px 0 10px;
+	    border-color: #F3E000 transparent transparent transparent;
+	}
+	.header-right h6 {
+	    font-size: 1em;
+	    color: #C7C7C7;
+	    margin-top: 0.8em;
+	    letter-spacing: 6px;
+	}
+	ul.address {
+	    margin-top: 2em;
+	    border-top: 1px solid #AFAFAF;
+	    padding-top: 0.5em;
+	}
+	ul.address li {
+	    display: block;
+	}
+	ul.address li ul.address-text li {
+	    display: inline-block;
+	    font-size: 1.2em;
+	    color: #fff;
+	    margin-top: 1em;
+		font-weight: 100;
+	}
+	@media only screen and (min-width: 100px) and (max-width: 640px) {
+		ul.address li {
+	    	display: inline-block;
+	    	margin: 0 0.8em 0.8em 0;
+		}
+		ul.address li ul.address-text li {
+			display: block;
+		}
+	}
+	.header-right .btns .btn{
+		margin: .5em 1em .5em 0;
+		font-family: 'Overlock', cursive;
+		-webkit-transition: 0.5s;
+		transition: 0.5s;
+		text-shadow: 1px 1px 1px #262626;
+		outline: 0;
+		position: relative;
+	}
+	.header-right .btns .btn:nth-of-type(1):hover{
+		background-color: rgb(51,51,51);
+		color: #FFFFEE;
+		box-shadow: 0px 2px 2px #F2F2F2 ;
+	}
+	.header-right .btns .btn:nth-of-type(2):hover{
+		background-color: rgb(13,120,183);
+		color: #FFFFEE;
+		box-shadow: 0px 2px 2px #F2F2F2 ;
+	}
+	.header-right .btns .btn:nth-of-type(3):hover{
+		background-color: #00AC72;
+		color: #FFFFEE;
+		box-shadow: 0px 2px 2px #F2F2F2 ;
+	}
+	.header-right .btns .btn:nth-of-type(4):hover{
+		background-color:#62b900;
+		color: #FFFFEE;
+		box-shadow: 0px 2px 2px #F2F2F2 ;
+		position: relative;
+	}
+	.header-right .wechat{
+		width: 150px;
+		height: 150px;
+		position: absolute;
+		display: none;
+		border-radius: 2px;
+		top: -158px;
+		left: 0px;
+	}
+	ul.address li ul.address-text li:nth-child(1){
+		width: 22%;
+	}
+	ul.address li ul.address-text li a {
+	    color: #fff;
+		text-decoration:none;
+	}
+	ul.address li ul.address-text li a:hover{
+	    color: #0FF;
+	}
+	/*banner 结束*/
+	
+	/*nav 开始*/
+	.top-nav{width: 100%;/*border-bottom: 2px double #56b2e6;*/background-color: #56b2e6;}
+	.top-nav ul{width: 100%;}
+	.top-nav ul li{width: 20%;text-align: center;}
+	@media only screen and (max-width:768px ) {
+		.top-nav ul li{width: 100%;text-align: center;}
+	}
+	.top-nav ul li a{color: #FFFFEE;width: 100%;height: 100%;transition: .5s;}
+	.top-nav ul li a:hover{color: #56B2E6;background-color: #FFFFEE;transform: scale(0.8);font-size: 1.2em;}
+	.navbar-header button{color: #FFFFEE;width: 100%;height: 100%;text-align: center;letter-spacing: 30px;font-size: 19px;margin-right: 0px;}
+	/*nav 结束*/
+	
+	/*resume*/
+	.resume{width: 100%;height: 600px;border: 1px solid #000000;}
+	/*resume end*/
+	/*work*/
+	.work{width: 100%;height: 600px;border: 1px solid #000000;}
+	/*work end*/
+	</style>
+</head>
+<body style="height: 1200px;">
+	<!--banner-->
+	<div class="banner">
+		<div class="banner-info">
+			<div class="container">
+					<div class="col-sm-4 header-left">
+							<img src="img/css3/3.jpg"/>
+					</div>
+				
+					<div class="col-sm-8 header-right">
+						<h2 class="hidden-xs">Hello</h2>
+						<h1>I'm femonster</h1>
+						<h6>寻求一份关于前端的工作</h6>
+						
+						<ul class="address">
+							<li>
+								<ul class="address-text">
+									<li><b>NAME </b></li>
+									<li> 张耕恺</li>
+								</ul>
+							</li>
+							<li>
+								<ul class="address-text">
+									<li><b>AGE </b></li>
+									<li>22岁 </li>
+								</ul>
+							</li>
+							<li>
+								<ul class="address-text">
+									<li><b>PHONE </li>
+									<li>18613582533 </li>
+								</ul>
+							</li>
+							<li>
+								<ul class="address-text">
+									<li><b>ADDRESS </b></li>
+									<li> 北京市</li>
+								</ul>
+							</li>
+							<li>
+								<ul class="address-text">
+									<li><b>E-MAIL </b></li>
+									<li><a href="mailto:coder_zhanggk@foxmail.com">coder_zhanggk@foxmail.com</a></li>
+								</ul>
+							</li>
+						</ul>
+						<div class="btns">
+							<a class="btn btn-default" href="https://github.com/femonster">GitHub</a>
+							<a class="btn btn-default" href="https://www.linkedin.com/in/%E8%80%95%E6%81%BA-%E5%BC%A0-770324128?trk=nav_responsive_tab_profile_pic">LinkedIn</a>
+							<a class="btn btn-default" href="https://www.freecodecamp.cn/femonster">FreeCodeCamp</a>
+							<a class="btn btn-default" href="javascript:;" id="wechat">WeChat<img src="img/zgk/mychat.png" class="wechat"/></a>
+						</div>
+						
+					</div>
+					<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!--banner end-->
+	<!--nav-->
+	
+	<nav class="top-nav" role="navigation">
+	    <div class="container">
+	    	 <div class="navbar-header">
+		        <button type="button" class="navbar-toggle" data-toggle="collapse"
+		                data-target="#navUl">列表</button>
+   			 </div>
+   			<div class="collapse navbar-collapse" id="navUl">
+		        <ul class="nav navbar-nav">
+		            <li><a href="#resume">自我介绍</a></li>
+		            <li><a href="#work">工作经历</a></li>
+		            <li><a href="#edu">教育经历</a></li>
+		            <li><a href="#skill">个人技能</a></li>
+		            <li><a href="#project">作品展示</a></li>
+		        </ul>
+	     	</div>
+	    </div>
+	</nav>
+
+	<!--nav end-->
+	<!--个人简介-->
+	<div class="resume" id="resume">
+		<h3>About Me</h3>
+		<div class="cotainer">
+			
+		</div>
+	</div>
+	<!--个人简介结束-->
+	<!--工作经历-->
+	<div class="work" id="work">
+		
+	</div>
+	<!--工作经历结束-->
+	<!--教育经历-->
+	<div class="edu" id="edu">
+		
+	</div>
+	<!--教育经历结束-->
+	<!--个人技能-->
+	<div class="skill" id="skill">
+		
+	</div>
+	<!--个人技能结束-->
+	<!--项目链接-->
+	<div class="project" id="project">
+		
+	</div>
+	<!--项目链接结束-->
+	<footer>
+		<iframe src="http://a.xnimg.cn/wap/mobile/2017activity/dati/images/bg_normal.mp3" frameborder="0" width="0" height="0">
+		</iframe>
+	</footer>
+</body>
+<script type="text/javascript" src="js/jquery-3.1.0.min.js" ></script>
+<script type="text/javascript" src="js/bootstrap.min.js" ></script>
+<script>
+	$(function(){
+		//微信二维码
+		(function(){
+			$('#wechat').click(function(){
+				$('.wechat').toggleClass('show');
+			});
+		})();
+		
+		
+		
+	});
+</script>
+</html>
+<!--$(document).ready(function($){
+	$('#comt').click(function(){
+		$('html,body').animate({scrollTop:$('#comments').offset().top}, 800);
+	});
+	$('#xia').click(function(){
+		$('html,body').animate({scrollTop:$('#footer').offset().top}, 800);
+	});
+});-->

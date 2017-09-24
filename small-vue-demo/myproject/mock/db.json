@@ -1,0 +1,158 @@
+﻿{
+  "zsData": [
+  {
+    "oindex": "0",
+    "type": "zsq",
+    "fenimg": "./static/img/1.jpg",
+    "imgurl": ["./static/img/1.jpg", "./static/img/2.jpg"],
+    "title": "张世奇窑变堆雕-女王",
+    "price": "4800",
+    "desc": "钻石之美，在于工法切割键产生的折射。泥料是软的，在呈现与保留钻石切割面之间锐利的折线转角，是相当困难，故每个切面都是以一刀利落成型，无法再做二次修边，修面，且什么什么泥料不认识比一般泥料质地较为坚硬，在塑形及修边上更困难，所以在泥料切割时，有时切割面出现较不平滑的切面，此为什么什么土胎固有特性，为正常现象."
+  },
+  {
+    "oindex": "1",
+    "type": "zsq",
+    "fenimg": "./static/img/2.jpg",
+    "imgurl": ["./static/img/2.jpg", "./static/img/3.jpg"],
+    "title": "罗荣辉段泥阳刻-五福",
+    "price": "9000",
+    "desc": "这是一个特别好的东西"
+  },
+  {
+    "oindex": "2",
+    "type": "zsq",
+    "fenimg": "./static/img/3.jpg",
+    "imgurl": ["./static/img/3.jpg", "./static/img/4.jpg"],
+    "title": "李奇鸿许明山段泥浮",
+    "price": "18000",
+    "desc": "李奇鸿许明山段泥浮"
+  },
+  {
+    "oindex": "3",
+    "type": "zsq",
+    "fenimg": "./static/img/4.jpg",
+    "imgurl": ["./static/img/4.jpg", "./static/img/5.jpg"],
+    "title": "张士奇劲羊奔福壶",
+    "price": "3780",
+    "desc": "张士奇劲羊奔福壶"
+  },
+  {
+    "oindex": "4",
+    "type": "zsq",
+    "fenimg": "./static/img/5.jpg",
+    "imgurl": ["./static/img/5.jpg", "./static/img/6.jpg"],
+    "title": "xxx",
+    "price": "8000",
+    "desc": "这是一个feic好的东西"
+  }],
+  "lqData":[],
+  "lrData":[],
+  "scData":[
+    {   
+        "oindex":"0",
+        "type":"scp",
+        "fenimg":"./static/img/sc1.jpg",
+        "imgurl": ["./static/img/sc1.jpg"],
+        "title": "一池",
+        "price": "暂无",
+        "caizhi":"乌金石",
+        "desc": "设计灵感来源于古诗“风乍起，吹皱一池春水”。设计师以器型为池形，平静的水面吹出了雕花纹理，形简意美，直入人心。"
+    },{   
+        "oindex":"1",
+        "type":"scp",
+        "fenimg":"./static/img/sc2.jpg",
+        "imgurl": ["./static/img/sc2.jpg"],
+        "title": "舍得",
+        "price": "暂无",
+        "caizhi":"天罗绿石",
+        "desc": "作品打破传统茶盘的一成不变，将杯托设计成可置于盘内，也可取出独置的两个小方块。置于盘内时，它是一个造型，当舍弃作品整体性将其取处独置时，又得到另一个新的造型，这正是此款作品在设计上的独到之处。"
+    },{   
+        "oindex":"2",
+        "type":"scp",
+        "fenimg":"./static/img/sc3.jpg",
+        "imgurl": ["./static/img/sc3.jpg"],
+        "title": "万物生",
+        "price": "暂无",
+        "caizhi":"玄青石",
+        "desc": "作品以玄青石特有的极具质感的黑色为灵感来源，这一方雅石，就像是孕育万物的大地之母，时尚的阶梯式底座，精致的雕花圆盘，素雅的方形杯垫……设计师很有心地让这方茶器所孕育的这些生命，在它身上错落有致地生长。"
+    },{   
+        "oindex":"3",
+        "type":"scp",
+        "fenimg":"./static/img/sc4.jpg",
+        "imgurl": ["./static/img/sc4.jpg"],
+        "title": "将相和",
+        "price": "暂无",
+        "caizhi":"黑金石",
+        "desc": "作品整体取秦汉建筑“豪放朴拙”的设计风格，盘体沿用春秋以来盛行的高台理念，两端为内收的微高底座，并结合现代美学的艺术格调，两块带围边的正方形附盘横跨盘面，有如一将一相定河山那般大气凛然。"
+    }
+],
+  "aData":[
+    {   
+    	"oindex":"0",
+    	"type":"jx",
+        "fenimg":"./static/img/1.jpg",
+        "imgurl": ["./static/img/1.jpg", "./static/img/2.jpg"],
+        "title": "张世奇窑变堆雕-女王",
+        "price": "4800",
+        "desc": "钻石之美，在于工法切割键产生的折射。泥料是软的，在呈现与保留钻石切割面之间锐利的折线转角，是相当困难，故每个切面都是以一刀利落成型，无法再做二次修边，修面，且什么什么泥料不认识比一般泥料质地较为坚硬，在塑形及修边上更困难，所以在泥料切割时，有时切割面出现较不平滑的切面，此为什么什么土胎固有特性，为正常现象."
+    },
+    {   
+    	"oindex":"1",
+    	"type":"jx",
+        "fenimg":"./static/img/2.jpg",
+        "imgurl": ["./static/img/2.jpg", "./static/img/3.jpg"],
+        "title": "罗荣辉段泥阳刻-五福",
+        "price": "9000",
+        "desc": "这是一个特别好的东西"
+    },
+    {  
+    	"oindex":"2",
+    	"type":"jx",
+        "fenimg":"./static/img/3.jpg",
+        "imgurl": ["./static/img/3.jpg", "./static/img/4.jpg"],
+        "title": "李奇鸿许明山段泥浮",
+        "price": "18000",
+        "desc": "李奇鸿许明山段泥浮"
+    },
+    {   "oindex":"3",
+    	"type":"jx",
+        "fenimg":"./static/img/4.jpg",
+        "imgurl": ["./static/img/4.jpg", "./static/img/5.jpg"],
+        "title": "张士奇劲羊奔福壶",
+        "price": "3780",
+        "desc": "张士奇劲羊奔福壶"
+    },
+    {   "oindex":"4",
+    	"type":"jx",
+        "fenimg":"./static/img/5.jpg",
+        "imgurl": ["./static/img/5.jpg", "./static/img/6.jpg"],
+        "title": "xxx",
+        "price": "8000",
+        "desc": "这是一个feic好的东西"
+    },
+    {   "oindex":"5",
+    	"type":"jx",
+        "fenimg":"./static/img/1.jpg",
+        "imgurl": ["./static/img/1.jpg", "./static/img/2.jpg"],
+        "title": "张世奇窑变堆雕-女王",
+        "price": "4800",
+        "desc": "钻石之美，在于工法切割键产生的折射。泥料是软的，在呈现与保留钻石切割面之间锐利的折线转角，是相当困难，故每个切面都是以一刀利落成型，无法再做二次修边，修面，且什么什么泥料不认识比一般泥料质地较为坚硬，在塑形及修边上更困难，所以在泥料切割时，有时切割面出现较不平滑的切面，此为什么什么土胎固有特性，为正常现象."
+    },
+    {   "oindex":"6",
+    	"type":"jx",
+        "fenimg":"./static/img/1.jpg",
+        "imgurl": ["./static/img/1.jpg", "./static/img/2.jpg"],
+        "title": "张世奇窑变堆雕-女王",
+        "price": "4800",
+        "desc": "钻石之美，在于工法切割键产生的折射。泥料是软的，在呈现与保留钻石切割面之间锐利的折线转角，是相当困难，故每个切面都是以一刀利落成型，无法再做二次修边，修面，且什么什么泥料不认识比一般泥料质地较为坚硬，在塑形及修边上更困难，所以在泥料切割时，有时切割面出现较不平滑的切面，此为什么什么土胎固有特性，为正常现象."
+    },
+    {   "oindex":"7",
+    	"type":"jx",
+        "fenimg":"./static/img/1.jpg",
+        "imgurl": ["./static/img/1.jpg", "./static/img/2.jpg"],
+        "title": "张世奇窑变堆雕-女王",
+        "price": "4800",
+        "desc": "钻石之美，在于工法切割键产生的折射。泥料是软的，在呈现与保留钻石切割面之间锐利的折线转角，是相当困难，故每个切面都是以一刀利落成型，无法再做二次修边，修面，且什么什么泥料不认识比一般泥料质地较为坚硬，在塑形及修边上更困难，所以在泥料切割时，有时切割面出现较不平滑的切面，此为什么什么土胎固有特性，为正常现象."
+    }
+]
+}

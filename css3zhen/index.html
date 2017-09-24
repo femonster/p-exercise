@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css3帧动画</title>
+	<style>
+	/* body{background: red;} */
+		.s-box{
+			width:300px;
+			min-height:200px;
+			border:1px solid black;
+			margin: 10px auto 0;
+			/* Firefox */
+			display:-moz-box;
+			-moz-box-pack:center;
+			-moz-box-align:center;
+
+			/* Safari、Opera 以及 Chrome */
+			display:-webkit-box;
+			-webkit-box-pack:center;
+			-webkit-box-align:center;
+
+			/* W3C */
+			display:box;
+			box-pack:center;
+			box-align:center;
+		}
+
+		.my-hover1{
+			  width:149px;
+			  height:149px;
+			  margin:10px;
+			  background-image:url('img/qrcode1-t.jpg');
+			  background-repeat:no-repeat;
+			  background-position:0 0;
+		}
+		.my-hover1:hover{
+			-webkit-animation: movedown 0.5s steps(12) forwards;
+		}
+
+		@-webkit-keyframes movedown{
+		  0%{
+		    background-position:0 0;
+		  }
+		  100%{
+		    background-position:0 -1800px; 
+		  }
+		}
+
+		.my-hover2{
+			width: 100px;
+			height: 100px;
+			margin: 10px;
+			background-image: url('img/heart-sprite.png');
+			background-repeat: no-repeat;
+			background-position: 0 0;
+		}
+		.my-hover2:hover{
+			-webkit-animation: animateTwo 1s steps(1,start) forwards;
+		}
+
+		@keyframes animateTwo {
+		    0%   {  background-position: 0 0; }
+		    3.4% {  background-position: -100px 0; }
+		    6.8% {  background-position: -200px 0; }
+		    10.2%{  background-position: -300px 0; }
+		    13.6%{  background-position: -400px 0; }
+		    17%  {  background-position: -500px 0; }
+		    20.4%{  background-position: -600px 0; }
+		    23.8%{  background-position: -700px 0; }
+		    27.2%{  background-position: -800px 0; }
+		    30.6%{  background-position: -900px 0; }
+		    34%  {  background-position: -1000px 0; }
+		    37.4%{  background-position: -1100px 0; }
+		    40.8%{  background-position: -1200px 0; }
+		    44.2%{  background-position: -1300px 0; }
+		    47.6%{  background-position: -1400px 0; }
+		    51%  {  background-position: -1500px 0; }
+		    54.4%{  background-position: -1600px 0; }
+		    57.8%{  background-position: -1700px 0; }
+		    61.2%{  background-position: -1800px 0; }
+		    64.6%{  background-position: -1900px 0; }
+		    68%  {  background-position: -2000px 0; }
+		    71.4%{  background-position: -2100px 0; }
+		    74.8%{  background-position: -2200px 0; }
+		    78.2%{  background-position: -2300px 0; }
+		    81.6%{  background-position: -2400px 0; }
+		    85%  {  background-position: -2500px 0; }
+		    88.4%{  background-position: -2600px 0; }
+		    91.8%{  background-position: -2700px 0; }
+		    95.2%{  background-position: -2800px 0; }
+		    100% {  background-position: -2800px 0; }
+		}
+
+
+
+		@-webkit-keyframes anim-name{
+		    0%{ background-position: 0 0;}
+		    4%{ background-position: -250px 0;}
+		    8%{ background-position: -500px 0;}
+		    12%{background-position: -750px 0;}
+		    16%{background-position: -1000px 0;}
+		    20%{ background-position: -1250px 0;}
+		    24%{ background-position: -1500px 0;}
+		    28%{ background-position: -1750px 0;}
+		    32%{ background-position: -2000px 0;}
+		    36%{ background-position: -2500px 0;}
+		    40%{ background-position: -2750px 0;}
+		    44%{ background-position: -3000px 0;}
+		    48%{ background-position: -3250px 0;}
+		    52%{ background-position: -3500px 0;}
+		    56%{ background-position: -3750px 0;}
+		    60%{ background-position: -4000px 0;}
+		    64%{ background-position: -4250px 0;}
+		    68%{ background-position: -4500px 0;}
+		    72%{ background-position: -4750px 0;}
+		    76%{ background-position: -5000px 0;}
+		    80%{ background-position: -5250px 0;}
+		    84%{ background-position: -5500px 0;}
+		    88%{ background-position: -5750px 0;}
+		    92%{ background-position: -6000px 0;}
+		    96%{ background-position: -6250px 0;}
+		    100%{background-position: -6500px 0;}
+		}
+
+		.my-hover3{
+			width: 250px;
+			height: 401px;
+			background-image: url('img/dragon2.png');
+			background-size: 6500px 400px;
+			background-repeat: no-repeat;
+			background-position: 0 0;
+			animation: anim-name 4s step-start forwards;
+
+		}
+	</style>
+</head>
+<body>
+		<div class="s-box">
+			<div class="my-ss my-hover1">
+			</div>
+		</div>
+		<div class="s-box">
+			<div class="my-ss my-hover2">
+			</div>
+		</div>
+		<div class="s-box">
+			<div class="my-ss my-hover3">
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3D幻灯片</title>
+	<style>
+	/*
+		transform-origin 旋转的基点
+		transform-style（preserve-3d） 建立3D空间(3d视角)
+		perspective 景深（你站在多远的位置看）
+	 */	
+		body{background-color: #999;}
+		.wrap{width: 600px;height: 270px;position: relative;margin: 20px auto;-webkit-perspective:800px;-webkit-transform-style:preserve-3d;}
+		img{width:600px;height: 270px;position: absolute;top: 0;left: 0;-webkit-transform-origin:bottom;opacity: 0;}
+		.show{animation: 1s show;opacity: 1;}
+		.hide{animation: 0.6s hide;opacity: 0;}
+		@-webkit-keyframes show{
+			0%{
+				opacity: 0;
+				-webkit-transform:rotateX(180deg);
+
+			}
+			50%
+			{
+				-webkit-transform:rotateX(-25deg);
+				opacity:1;
+			}
+			60%
+			{
+				-webkit-transform:rotateX(18deg);
+				opacity:1;
+			}
+			70%
+			{
+				-webkit-transform:rotateX(-12deg);
+				opacity:1;
+			}
+			80%
+			{
+				-webkit-transform:rotateX(8deg);
+				opacity:1;
+			}
+			90%
+			{
+				-webkit-transform:rotateX(-6deg);
+				opacity:1;
+			}
+			100%
+			{
+				-webkit-transform:rotateX(0deg);
+				opacity:1;
+			}
+		}
+		@-webkit-keyframes hide{
+			0%{
+				opacity: 1;
+				-webkit-transform:rotateX(0deg);
+
+			}
+			100%{
+				opacity: 0;
+				-webkit-transform:rotateX(-180deg);
+			}
+		}
+		.btn{
+			width: 60px;
+			height:60px;
+			font: 13px/40px "宋体";
+			color: #fff;
+			background-color: #9c9fcd;
+			border-radius: 50%;
+			border: none;
+			position: absolute;
+		}
+		.btn1{top: 135px;left: 311px;}
+		.btn2{top: 135px;left: 1190px;}
+	</style>
+</head>
+<body>
+	<div class="wrap" id="wrap">
+		<img src="img/css3/1.jpg" alt="" class="show">
+		<img src="img/css3/2.jpg" alt="">
+		<img src="img/css3/3.jpg" alt="">
+		<img src="img/css3/4.jpg" alt="">
+	</div>
+	<button class="btn btn1">上一张</button>
+	<button class="btn btn2">下一张</button>
+</body>
+<script type="text/javascript">
+	window.onload=function() {
+		var owrap = document.getElementById('wrap');
+		var aimg = owrap.getElementsByTagName('img');
+		var abtns =document.getElementsByTagName('button');
+		var inow = 0;
+		abtns[1].onclick=function(){
+			aimg[inow].className="hide";
+			inow++;
+			if (inow>=aimg.length) {inow=0;}
+			aimg[inow].className="show";
+		}
+		abtns[0].onclick=function(){
+			aimg[inow].className="hide";
+			inow--;
+			if (inow<=0) {inow=aimg.length-1;}
+			aimg[inow].className="show";
+		}
+	}
+</script>
+</html>

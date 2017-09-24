@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>index9</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <script type="text/javascript">
+    	
+    </script>
+</head>
+<body>
+    <style>
+        .wrap{
+            display:flex;
+            height:916px;
+            overflow: hidden;
+            border: 5px solid #fff;
+            
+        }
+         .col{
+            flex:1;
+            width: 100%;
+            transition: all 0.5s
+        }
+        .col .item{
+            width: 100%;
+            height: 226px;
+            position: relative;
+            overflow: hidden;
+            border-left:8px solid #fff;
+            border-bottom:8px solid #fff;
+            transition: all 0.5s;     
+        }
+      
+        .col2 .item{
+            width:100%;
+            overflow: hidden;
+            height: 300px;
+            transition: all 0.5s
+            
+        }
+         .col3 .item{
+            overflow: hidden; 
+            height: 360px;
+            transition: all 0.5s
+            
+        }
+        .a1{
+            height: 386px !important;
+        }
+        .a2{
+            height: 180px !important;    
+        }
+        .a4{
+            flex:2 !important;
+        }
+        .a5{
+            height:386px !important;
+        }
+        .a6{
+            height:260px !important;
+        }
+        .a7{
+            height:260px !important;
+        }
+        .a8{
+            height:386px !important;
+        }
+        .shade{
+            position: absolute;   
+            width:100%;
+            height:100%;
+            background-color: black;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.8s;    
+        }
+        .item p{
+            position: absolute;
+            width:250px;
+            height:100px;
+            margin-top: -30px;
+            margin-left: -125px;
+            color:white;
+            font-size: 25px; 
+            text-align: center;
+            z-index: 1;
+            left:50%;
+            top:50%;
+            transition: all 0.5s;
+        }
+    </style>
+    <div class="wrap">
+        <div class="col col1">
+            <div class="item"><p>my-love</p><div class="shade"></div></div>
+            <div class="item"><p>my-love</p><div class="shade"></div></div>
+            <div class="item"><p>my-love</p><div class="shade"></div></div>
+            <div class="item"><p>my-love</p><div class="shade"></div></div>
+        </div>
+        <div class="col col2">
+            <div class="item"><p>my-love</p><div class="shade"></div></div>
+            <div class="item"><p>my-love</p><div class="shade"></div></div>
+            <div class="item"><p>my-love</p><div class="shade"></div></div>
+        </div>
+        <div class="col col3">
+            <div class="item"><p>my-love</p><div class="shade"></div></div>
+            <div class="item"><p>my-love</p><div class="shade"></div></div>
+            <div class="item"><p>my-love</p><div class="shade"></div></div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+    <script>
+    $(function(){
+    	var $box = $('.col .item');
+    	var $col = $('.col');
+    	$box.each(function(index) {
+			$(this).css({"background":"url(img/"+(index+1)+".jpg) no-repeat","background-size":"cover","background-position":"center"});
+		});
+
+    	$box.mouseover(function(){
+    		$(this).find("p").html("my-love animals");
+    		$(this).find(".shade").css("opacity","0.7");
+    		$box.removeClass('a1').removeClass('a2');
+    		$(this).addClass('a1');
+    		$(this).siblings().addClass('a2');
+
+    	}).mouseout(function(){
+    		$(this).find("p").html("my-love");
+    		$(this).find(".shade").css("opacity","0");
+    		$box.removeClass('a1').removeClass('a2');
+    	});
+
+    	$col.mouseover(function(){
+    		$col.removeClass('a4');
+    		$(this).addClass('a4');
+    	});
+
+    	$col2 = $('.col2');
+    	$item2 =$('.col2>.item');
+ 		$item2.mouseover(function(){
+ 			$item2.removeClass('a5').removeClass('a6');
+ 			$(this).siblings().addClass('a6');
+ 			$(this).addClass('a5');
+ 		});
+
+ 		$col3 = $('.col3');
+    	$item3 =$('.col3>.item');
+    	$item3.mouseover(function(){
+    		$item3.removeClass('a8').removeClass('a7');
+    		$(this).siblings().addClass('a7');
+    		$(this).addClass('a8');
+
+    	});
+
+ });
+
+</script>
+</body>
+</html>

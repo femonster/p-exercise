@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>canvas-icestar</title>
+    <style>
+    html,body{
+    	height: 100%;
+    	width: 100%;
+    }
+    body{
+        margin:0;
+        padding:0;
+        overflow: hidden;
+    }
+
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" style="background-color:rgb(42,180,243);"></canvas>
+</body>
+<script>
+window.onload = function() {
+    init();
+}
+</script>
+<script src="js/tween.js"></script>
+<script src="js/raf-polyfill.js"></script>
+<script src="js/icestar.js"></script>
+</html>

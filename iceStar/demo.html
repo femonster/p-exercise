@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>scale</title>
+	<style>
+		body{background-color: black;}
+		#canvas{background-color:rgb(42,180,243);}
+	</style>
+</head>
+<body>
+<canvas id="canvas" width="600" height="600"></canvas>
+
+</body>
+<script type="text/javascript" src="js/tween.js"></script>
+<script type="text/javascript">
+    // var c,ctx,w,h,scaleNum;
+    // var sources={
+    //     iceStar:"./img/iceStar_1.png",
+    //     halo:"./img/weirao.png",
+    //     butter:"./img/ice_top.png",
+    //     mist:"./img/iceStar_2.png",
+    //     juice:"./img/small_ice.png"
+    // } 
+
+    // var images = {};
+
+    // // 加载图片
+    // function loadImg(source,img,fn) {
+    //     var loadedImages = 0;
+    //     var numImages = 0;
+    //     for (var src in source) {
+    //         numImages++;
+    //     }
+    //     for (var src in source) {
+    //         img[src] = new Image();
+    //         img[src].onload = function() {
+    //             if (++loadedImages >= numImages) {
+    //                 fn();
+    //             }
+    //         };
+    //         img[src].src = source[src];
+    //     }
+    //     console.log(images);
+    // }
+
+    // var cv_iceStar={
+    //     init:function() {
+            
+    //     }
+    // }
+
+
+    var oImg = new Image();
+    oImg.src="./img/iceStar_1.png";
+    var oImg2=new Image();
+    oImg2.src="./img/ice_top.png";
+    var oImg3=new Image();
+    oImg3.src="./img/iceStar_2.png";
+    var oImg4=new Image();
+    oImg4.src="./img/weirao.png";
+    var oImg5=new Image();
+    oImg5.src="./img/smoke_cute.png";
+    var canvas=document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    var ref;
+    var w= canvas.width;
+    var h= canvas.height;
+    var scaleNum = 0.1;
+    var s_scaleNum=0;
+    var oalpha=0;
+    var oalpha_hat=0;
+    var oalpha_han=0;
+    var oalpha_oth=0;
+    var oalpha_oran=0;
+    var oalpha_eye=0;
+    var oalpha_xig=0;
+    var oalpha_smoke=0;
+    var oalpha_halo=0;
+    var ispeed = 0;
+    var progress=0;
+    var yh =0;
+    var yhs=0.2;
+
+    var particleCount = 80;
+    var maxVelocity=1;
+    var particles=[];
+    var rectW = 400,rectH = 350;
+
+    var tx =w/2+40,ty=h/2-40;
+    var curveFunction = {
+        linear: function(time, startValue, changeValue, duration) {
+            return changeValue * time / duration + startValue;
+        },
+        sineEaseOut: function(t, b, c, d) {
+            var _HALF_PI = Math.PI / 2;
+            return c * Math.sin(t / d * _HALF_PI) + b;
+        },
+        bounceEaseInOut: function(t, b, c, d) {
+            if (t < d / 2) return bounceEaseIn(t * 2, 0, c, d) * .5 + b;
+            else return curveFunction.bounceEaseOut(t * 2 - d, 0, c, d) * .5 + c * .5 + b;
+        },
+        backEaseIn:function(t,b,c,d){
+        var s=1.70158;
+        return c*(t/=d)*t*((s+1)*t - s) + b;
+        },
+        backEaseOut:function (t,b,c,d,a,p) {
+            var s=1.70158;
+            return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
+        },
+        quartEaseIn: function(t, b, c, d) {
+            return c * (t /= d) * t * t * t + b;
+        },
+        cubicEaseInOut: function(t, b, c, d) {
+            if ((t /= d / 2) < 1) return c / 2 * t * t * t + b;
+            return c / 2 * ((t -= 2) * t * t + 2) + b;
+        },
+        bounceEaseOut: function(t, b, c, d) {
+            if ((t /= d) < (1 / 2.75)) {
+                return c * (7.5625 * t * t) + b;
+            } else if (t < (2 / 2.75)) {
+                return c * (7.5625 * (t -= (1.5 / 2.75)) * t + .75) + b;
+            } else if (t < (2.5 / 2.75)) {
+                return c * (7.5625 * (t -= (2.25 / 2.75)) * t + .9375) + b;
+            } else {
+                return c * (7.5625 * (t -= (2.625 / 2.75)) * t + .984375) + b;
+            }
+        },
+        backEaseInOut: function(t, b, c, d, a, p) {
+            var s = 1.70158;
+            if ((t /= d / 2) < 1) return c / 2 * (t * t * (((s *= (1.525)) + 1) * t - s)) + b;
+            return c / 2 * ((t -= 2) * t * (((s *= (1.525)) + 1) * t + s) + 2) + b;
+        }
+    }
+    function drawAll() {
+        // console.log(yh,yhs);
+        ctx.clearRect(0,0,w,h);
+        progress++;
+        ctx.save();
+        // ctx.translate(40,0);
+        ctx.globalAlpha=0;
+        if (progress>=36) {
+            ctx.globalAlpha = Math.abs(curveFunction.quartEaseIn(progress,0,0.3,82));
+        }
+        if (progress>=70) {
+            update();
+        }
+        draw_smoke();
+        ctx.restore();
+
+        ctx.save();
+        ctx.translate(0,yh);
+        draw();
+        draw_xig();
+        draw_orange();
+        //draw_other();
+        draw_small();
+        draw_halo();
+        draw_hat();
+        draw_han();
+        draw_eyes();
+        ctx.restore();
+        yh+=yhs;
+        if (yh>14||yh<0) {
+            yhs=-yhs;
+        }
+        requestAnimationFrame(drawAll);
+    }
+
+    var scaleIce = 1;
+    var scalespeed=0.001;
+    var ooopcity=0;
+    function draw() {
+        ctx.save();
+        ctx.translate(w/2,h/2);
+        ctx.scale(scaleNum,scaleNum);
+        ctx.globalAlpha=ooopcity;
+        ctx.drawImage(oImg,623,657,330,320,-330/2,-320/2,330,320);
+        ctx.restore();
+
+        ctx.save();
+        
+        if (progress<=64) {
+            ctx.translate(w/2,h/2);
+            ctx.scale(scaleNum,scaleNum);
+            ctx.globalAlpha=ooopcity;
+        }else{
+            ctx.scale(1,scaleIce);
+            ctx.translate(w/2,h/2);
+
+            scaleIce+=scalespeed;
+
+        }
+        ctx.drawImage(oImg,17,686,345,290,-330/2,-320/2-30,345,290);    
+        ctx.restore();
+
+        ctx.save();
+        ctx.translate(w/2,h/2);
+        ctx.globalAlpha=ooopcity;
+            ctx.scale(scaleNum,scaleNum);
+      
+        ctx.drawImage(oImg2,-330/2+150,-320/2-30,205,259);  
+        ctx.restore();
+
+        if (progress>=32) {
+            ooopcity=1;
+        }
+        if (progress<=64) {
+           scaleNum=elasticEaseInOut(progress,0,1,64);
+        }
+        else{
+            if (scaleIce>1.05||scaleIce<1) {
+                scalespeed=-scalespeed;
+            }
+        }
+
+        
+    }
+
+    function draw_small() {
+
+        ctx.save();
+        ctx.translate(w/2,h/2);
+        ctx.globalAlpha = oalpha;
+        // ctx.scale(s_scaleNum,s_scaleNum);
+        ctx.drawImage(oImg,51,287,30,30,-330/2-50,-320/2+250,30,30);
+        ctx.restore();
+        // console.log(progress);
+        if (progress>=28&&progress<=36) {
+
+            oalpha=Math.abs(curveFunction.linear(progress,0,1,36));
+        }
+    }
+
+    function draw_hat(){
+        ctx.save();
+        ctx.translate(tx,ty);
+        ctx.globalAlpha = oalpha_hat;
+        // ctx.scale(s_scaleNum,s_scaleNum);
+        ctx.drawImage(oImg,192,457,187,195,-330/2+232,-320/2-115,187,195);
+        
+        ctx.restore();
+        // console.log(progress);
+        if (progress>=32) {
+            oalpha_hat=1;
+        }
+        if (progress>=32&&progress<=48) {
+            
+            if (tx>=300&&ty<=300) {
+                tx -= 5;
+                ty += 5;
+            }
+            // tx = Math.abs(curveFunction.linear(progress,340,-40,42));
+            // ty = Math.abs(curveFunction.linear(progress,40,260,42));
+        }
+        // console.log(tx,ty,w/2,h/2);
+    }
+
+    function draw_han() {
+        ctx.save();
+        ctx.translate(w/2,h/2);
+        ctx.globalAlpha = oalpha_han;
+        // ctx.scale(s_scaleNum,s_scaleNum);
+        ctx.drawImage(oImg,126,107,162,170,-330/2+258,-320/2-115,162,170);
+        ctx.restore();
+        // console.log(progress);
+        if (progress>=36) {
+            oalpha_han=1;
+        }
+
+    }
+
+
+    var osc = 1;
+    function draw_orange() {
+        ctx.save();
+        ctx.translate(w/2,h/2);
+        ctx.scale(osc,osc);
+        ctx.globalAlpha = oalpha_oran;
+        ctx.drawImage(oImg,852,230,120,120,-330/2,-320/2-40,120,120);
+        ctx.drawImage(oImg,720,5,124,116,-330/2+55,-320/2+25,124,116);
+        ctx.restore();
+        if (progress>=32) {
+            oalpha_oran=1;
+        }
+        if (progress>=32&&progress<=64) {
+             osc = elasticEaseInOut(progress,0,1,72);   
+        }
+
+    }
+    function draw_eyes() {
+        ctx.save();
+        ctx.translate(w/2,h/2);
+        ctx.globalAlpha = oalpha_eye;
+        ctx.drawImage(oImg,910,12,70,68,-330/2+250,-320/2-10,70,68);
+        ctx.restore();
+        if (progress>=48) {
+            oalpha_eye=1;
+        }
+
+    }
+
+    var xgth = 1;
+    function draw_xig() {
+        ctx.save();
+        ctx.translate(w/2,h/2);
+        ctx.scale(xgth,xgth);
+        ctx.globalAlpha = oalpha_xig;
+        ctx.drawImage(oImg,32,461,76,119,-330/2+70,-320/2-80,76,119);
+        
+        ctx.restore();
+        if (progress>=40) {
+            oalpha_xig=1;
+        }
+        if (progress>=36&&progress<=68) {
+             xgth = elasticEaseInOut(progress,0,1,76);   
+        }
+
+    }
+
+    function draw_halo(){
+        ctx.save();
+        ctx.translate(w/2,h/2);
+        ctx.globalAlpha =oalpha_halo;
+        ctx.drawImage(oImg4,-330/2-95,-320/2+115,481,192);    
+        ctx.restore();
+        if (progress>=64) {
+            oalpha_halo=Math.abs(curveFunction.quartEaseIn(progress,0,1,100));
+        }
+    }
+
+    function draw_other() {
+        ctx.save();
+        ctx.translate(w/2,h/2);
+        ctx.globalAlpha = oalpha_oth;
+        ctx.drawImage(oImg,510,170,229,213,-330/2+55,-320/2-15,229,213);
+         ctx.drawImage(oImg,51,287,30,30,-330/2-40,-320/2+85,12,12);
+        //小星球3
+        ctx.drawImage(oImg,51,287,30,30,-330/2+400,-320/2+200,25,25);
+        //小星球4
+        ctx.drawImage(oImg,51,287,30,30,-330/2+150,-320/2-100,10,10);
+        //小星球5
+        ctx.drawImage(oImg,51,287,30,30,-330/2+300,-320/2+330,9,9);
+        //小星球6
+        ctx.drawImage(oImg,397,236,9,9,-330/2+390,-320/2+180,12,12);
+        //小星球7
+        // ctx.globalAlpha=0.5;
+        // ctx.drawImage(oImg,288,375,9,9,-330/2,-320/2+330,33,33);
+        ctx.beginPath();
+        ctx.fillStyle="rgba(241,104,120,0.4)";
+        ctx.arc(-330/2,-320/2+330,9,0,Math.PI*2,true);
+        ctx.fill();
+        //小星球8
+        // ctx.globalAlpha=0.18;
+        ctx.beginPath();
+        ctx.fillStyle="rgba(255,152,197,0.2)";
+        ctx.arc(-330/2-60,-320/2+30,10,0,Math.PI*2,true);
+        ctx.fill();
+        // ctx.drawImage(oImg,155,22,12,12,-330/2-80,-320/2,30,30);
+        ctx.restore();
+        // console.log(progress);
+        if (progress>=32&&progress<=64) {
+            oalpha_oth=Math.abs(curveFunction.cubicEaseInOut(progress,0,1,64));
+        }
+    }
+
+    function Particle() {
+
+        this.x = 0;
+        this.y = 0;
+
+        this.xv = 0;
+        this.yv = 0;
+
+        this.radius = 20;
+
+        this.draw = function () {
+            // ctx.globalAlpha=0;
+            if (this.image) {               
+                    // if (pro>=72) {
+                        ctx.globalAlpha=this.alpha;
+                    // }
+                var fillWidth = rectW/2,
+                    fillHeight= fillWidth - fillWidth*(this.x / rectW *this.y /rectH);
+
+                ctx.drawImage(this.image,0,0,this.imageWidth,this.imageHeight,this.x,this.y,fillWidth,fillHeight);
+            }
+        };
+
+        this.update = function () {
+
+            this.x += this.xv;
+            this.y += this.yv;
+            
+            if (this.x >= rectW) {
+                this.xv = -this.xv;
+                this.x = rectW;
+            }
+            else if(this.x <= 0){
+                this.xv = -this.xv;
+                this.x = 0;
+            }
+
+            if (this.y>=rectH) {
+                this.yv = -this.yv;
+                this.y = rectH;
+            }
+            else if(this.y<=0){
+                this.yv = -this.yv;
+                this.y = 0;
+            }
+
+            this.alpha = (1 - Math.abs(rectW * 0.5 - this.x) / rectW) * (0.7 - Math.abs(rectH * 0.5 - this.y) / rectH);
+        };
+
+        this.setPosition = function (x,y) {
+            this.x = x;
+            this.y = y;
+        };
+
+        this.setVelocity = function (x,y) {
+            this.xv = x;
+            this.yv = y;
+        };
+
+        this.setImage = function(image) {
+            this.imageWidth = image.width;
+            this.imageHeight= image.height;
+            this.image = image;
+        };
+    }
+
+    function generateRandom(min,max) {
+        return Math.random() * (max - min) + min;
+    }
+
+    function draw_smoke() {
+            // 绘制所有粒子
+            particles.forEach(function(particle) {
+                particle.draw();
+            });
+    }
+    function update() {
+        particles.forEach(function(particle) {
+            particle.update();
+        });
+    }
+
+    window.onload=function () {
+        for (var i = 0; i < particleCount; ++i) {
+            var particle = new Particle();
+            // 随机位置
+            particle.setPosition(generateRandom(0, rectW), generateRandom(0, rectH));
+            // 设置随机速度
+            particle.setVelocity(generateRandom(0, 0.5), generateRandom(-maxVelocity, maxVelocity));
+            particles.push(particle);
+        }
+        particles.forEach(function(particle) {
+            particle.setImage(oImg5);
+        });
+        drawAll();
+    }
+
+
+</script>
+</html>

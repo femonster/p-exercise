@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>折扇导航</title>
+	<style>
+		body{margin: 0;padding: 0;background-color: #666;}
+		#box{
+			width: 1200px;
+			height: 700px;
+			background: url(img/css3/bg.png) no-repeat;
+			background-size: 100% 100%;
+			position: relative;
+			margin: 100px auto;
+		}
+		#box div{
+			width: 400px;
+			height: 100px;
+			position: absolute;
+			left: 555px;
+			top: 440px;
+			transform-origin: 35px 50px;
+			transition: 2s;
+			font: 30px/100px Arial;
+			padding-right: 30px;
+			color: #fff;
+			text-align: right;
+			border-radius: 3px;
+			transition: 1s;
+		}
+		#box div:nth-of-type(1){
+			background-color: #417191;
+		}
+		#box div:nth-of-type(2){
+			background-color: #ce8298;
+		}
+		#box div:nth-of-type(3){
+			background-color: #f78992;
+		}
+		#box div:nth-of-type(4){
+			background-color: #fbc0a5;
+		}
+		#box div:nth-of-type(5){
+			background-color: #f8988f;
+		}
+		#box div:nth-of-type(6){
+			background-color: #f16273;
+		}
+		#box div:nth-of-type(7){
+			background-color: #9c9fcd;
+		}
+		#box div:nth-of-type(8){
+			background-color: #bae2d3;
+		}
+		#box div:nth-of-type(9){
+			background-color: #43bab8;
+		}
+		#box div:nth-of-type(10){
+			background-color: #678d95;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div>0</div>
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+		<div>6</div>
+		<div>7</div>
+		<div>8</div>
+		<div>封面九</div>
+	</div>
+	<script>
+		window.onload=function() {
+			var obox = document.getElementById('box');
+			var aDiv = obox.getElementsByTagName('div');
+			var flag=true;
+			
+			spread();
+			//点击封面展开合起
+			aDiv[9].onclick=function() {
+				flag?close():spread();
+				flag=!flag;
+			}
+			
+			// 点击每一块进行展示（这里的旋转度数不是很懂）
+			for (var i = 0; i < aDiv.length-1; i++) {
+				(function(i) {
+					aDiv[i].onclick=function() {
+						for (var j = 0; j < aDiv.length; j++) {
+							if (j<i) {
+								aDiv[j].style.transform = "rotate("+(350-(j*14)+ i*17-80-10)+"deg)";
+							}
+							if (j>i) {
+								aDiv[j].style.transform = "rotate("+(350-(j*14)+ i*17-80-23)+"deg)";
+							}
+						}
+						aDiv[i].style.transform = "rotate("+(350-(i*17)+ i*17-80 )+"deg)";
+					}
+				})(i);
+			}
+
+			//展开
+			function spread() {
+				for (var i = 0; i <aDiv.length ; i++) {
+					aDiv[i].style.transform="rotate("+(350-(i*17))+"deg)";
+				}
+			}
+			// 合起
+			function close() {
+				for (var i = 0; i < aDiv.length; i++) {
+					aDiv[i].style.transform="rotate(0deg)";
+				}
+			}
+		}
+	</script>
+</body>
+</html>

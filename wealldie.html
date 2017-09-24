@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>渐变之iPhone开机动画</title>
+	<style>
+	body{background: #000;text-align: center;font:50px/200px "微软雅黑";}
+	h1{
+		width: 800px;
+		margin:0 auto; 
+		color:rgba(255,255,255,0.3);
+		background: -webkit-linear-gradient(-30deg,rgba(255,255,255,0) 150px,rgba(255,255,255,1) 200px,rgba(255,255,255,1) 250px,rgba(255,255,255,0) 300px) -200px no-repeat;
+		-webkit-background-clip:text;
+	}
+
+	</style>				
+</head>
+<body>
+<h1>凡人皆有一死<br>凡人皆需侍奉</h1>
+</body>
+<script>
+	window.onload=function() {
+		var oh1 = document.getElementsByTagName('h1')[0];
+		var timer=null;
+		var ileft = -200;
+		domove();
+		function domove() {
+			timer = setInterval(function() {
+				ileft+=10;
+				if (ileft>1000) {ileft=-200;clearInterval(timer);}
+				oh1.style.backgroundPosition=ileft+'px 0';
+			},30);
+
+		}
+		setInterval(function() {
+			domove();
+		},5000);
+	}
+</script>
+</html>
