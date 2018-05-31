@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            border: 0;
+        }
+
+        .scrollWrap {
+            margin: 200px auto;
+            width: 800px;
+            position: relative;
+            height: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden
+        }
+
+        .scrollView, .scrollBar, .scrollBtn {
+            overflow: hidden;
+            height: 300px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 10px;
+        }
+
+        .scrollView {
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            height: auto;
+            box-sizing: border-box;
+            moz-user-select: -moz-none;
+            -moz-user-select: none;
+            -o-user-select: none;
+            -khtml-user-select: none; /* you could also put this in a class */
+            -webkit-user-select: none; /* and add the CSS class here instead */
+            -ms-user-select: none;
+            user-select: none; /**禁止选中文字*/
+        }
+        .scrollBtn {
+            border-radius: 5px;
+            height: 50px;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 100;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="scrollWrap" id="scrollWrap">
+    <div class="scrollView" id="scrollView">
+        <p>张三李四王大麻子，速速集合1</p>
+        <p>张三李四王大麻子，速速集合2</p>
+        <p>张三李四王大麻子，速速集合3</p>
+        <p>张三李四王大麻子，速速集合4</p>
+        <p>张三李四王大麻子，速速集合5</p>
+        <p>张三李四王大麻子，速速集合6</p>
+        <p>张三李四王大麻子，速速集合7</p>
+        <p>张三李四王大麻子，速速集合8</p>
+        <p>张三李四王大麻子，速速集合9</p>
+        <p>张三李四王大麻子，速速集合10</p>
+        <p>张三李四王大麻子，速速集合11</p>
+        <p>张三李四王大麻子，速速集合12</p>
+        <p>张三李四王大麻子，速速集合13</p>
+        <p>张三李四王大麻子，速速集合14</p>
+        <p>张三李四王大麻子，速速集合15</p>
+        <p>张三李四王大麻子，速速集合16</p>
+        <p>张三李四王大麻子，速速集合17</p>
+        <p>张三李四王大麻子，速速集合18</p>
+        <p>张三李四王大麻子，速速集合19</p>
+        <p>张三李四王大麻子，速速集合20</p>
+        <p>张三李四王大麻子，速速集合21</p>
+        <p>张三李四王大麻子，速速集合22</p>
+        <p>张三李四王大麻子，速速集合23</p>
+        <p>张三李四王大麻子，速速集合24</p>
+        <p>张三李四王大麻子，速速集合25</p>
+        <p>张三李四王大麻子，速速集合26</p>
+        <p>张三李四王大麻子，速速集合27</p>
+        <p>张三李四王大麻子，速速集合28</p>
+        <p>张三李四王大麻子，速速集合29</p>
+        <p>张三李四王大麻子，速速集合30</p>
+        <p>张三李四王大麻子，速速集合31</p>
+        <p>张三李四王大麻子，速速集合32</p>
+        <p>张三李四王大麻子，速速集合33</p>
+        <p>张三李四王大麻子，速速集合34</p>
+        <p>张三李四王大麻子，速速集合35</p>
+        <p>张三李四王大麻子，速速集合36</p>
+        <p>张三李四王大麻子，速速集合37</p>
+        <p>张三李四王大麻子，速速集合38</p>
+        <p>张三李四王大麻子，速速集合39</p>
+        <p>张三李四王大麻子，速速集合40</p>
+        <p>张三李四王大麻子，速速集合41</p>
+        <p>张三李四王大麻子，速速集合42</p>
+        <p>张三李四王大麻子，速速集合43</p>
+        <p>张三李四王大麻子，速速集合44</p>
+        <p>张三李四王大麻子，速速集合45</p>
+        <p>张三李四王大麻子，速速集合46</p>
+        <p>张三李四王大麻子，速速集合47</p>
+        <p>张三李四王大麻子，速速集合48</p>
+        <p>张三李四王大麻子，速速集合49</p>
+        <p>张三李四王大麻子，速速集合50</p>
+    </div>
+    <!-- <div class="scrollBar" id="scrollBar"> -->
+        <span class="scrollBtn" id="scrollBtn"></span>
+<!--     </div> -->
+</div>
+</body>
+</html>
+<script src="js/scrollbar.js"></script>
+<script>
+	var box = document.getElementById("scrollWrap");
+	var con = document.getElementById('scrollView');
+	var bar = document.getElementById("scrollBtn");
+
+	new ZsBar(box,con,bar,document.body);
+</script>
+<!-- <script>
+	 function mouseWheel(obj, fn) { //封装滚轮
+        if (window.navigator.userAgent.indexOf('Firefox') != -1) {
+            obj.addEventListener('DOMMouseScroll', wheelFn, true);
+        } else {
+        	obj.onmousewheel = wheelFn;
+        }
+        function wheelFn(ev) {
+            ev = ev || event;
+            var direct = ev.wheelDelta ? ev.wheelDelta < 0 : ev.detail > 0;
+            fn && fn(direct); //将direct作为参数传递出去
+            if (window.event) { //IE
+                ev.returnValue = false; //ie 阻止默认事件
+                return false; //ie9 以上阻止
+            } else {
+                ev.preventDefault(); //阻止默认事件 firefox
+            }
+        };
+    }
+
+    function setTransform(element, value, key) {
+	    key = key || "Transform";
+	    try {
+	        ["moz", "o", "ms", "webkit", ""].forEach(function(prefix) {
+	            element.style[prefix + key] = value;
+	        });
+
+	    } catch (e) {
+	        console.log(e);
+	    }
+	    return element;
+	}
+
+	//滚轮滚动
+	var oBox = document.getElementById("scrollWrap");  //容器
+	var oSwrap = document.getElementById('scrollView'); //拖动的内容
+	var oScroller = document.getElementById("scrollBtn"); //滚动条
+	var dis_wrap = 0,scollH = 0,dis_scer = 0,wheel_rate = 0;
+
+	function setScrollW() {
+		console.log("resize w");
+		dis_wrap = oSwrap.offsetHeight - oBox.offsetHeight;  // 内容的高度 - 容器的高度
+		scollH = oBox.offsetHeight * (oBox.offsetHeight/oSwrap.offsetHeight); //根据比例计算出滚动条的高度
+
+		oScroller.style.height = scollH+"px";
+
+		dis_scer = oBox.offsetHeight-scollH; //滑块可移动的距离
+		wheel_rate = dis_scer/dis_wrap; //滑动移动比例
+	}
+
+	setScrollW();
+	
+	// 滚动
+	mouseWheel(oBox,function(dir) {
+		// 滚轮向下
+		if(dir){
+			var t = oSwrap.offsetTop - 30;
+			if(t<-dis_wrap){
+				t = -dis_wrap;
+			}
+			oSwrap.style.top = t + "px";
+			oScroller.style.top = -t * wheel_rate + 'px';
+		}else {
+            var t = oSwrap.offsetTop + 30;
+            if (t > 0) t = 0;
+            oSwrap.style.top = t + 'px';
+            oScroller.style.top = -t * wheel_rate + 'px';
+        }
+	})
+
+	//拖拽
+	oScroller.onmousedown = function(ev) {
+        ev = ev || window.event;
+        var mt = ev.clientY - this.offsetTop; //只取Y方向
+
+        document.onmousemove = function(ev) {
+            ev = ev || window.event;
+            var t = ev.clientY - mt;
+            if (t <= 0) t = 0; //限制顶部位置
+            if (t >= dis_scer - 2) t = dis_scer; //限制底部位置
+            //计算移动比率
+            move_rate = t / dis_scer;
+            oSwrap.style.top = -dis_wrap * move_rate + 'px'; //移动比率
+            oScroller.style.top = t + 'px';
+        };
+        document.onmouseup = function() {
+            document.onmousemove = null;
+        };
+        return false; //阻止选中文字
+    };
+    
+    window.onresize=function() {
+    	setScrollW();
+    }
+</script> -->
