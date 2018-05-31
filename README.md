@@ -8,6 +8,8 @@ desc: 边学习边实践
 ### 2.原生js
 + [贩卖机](https://femonster.github.io/p-exercise/vending/index.html)
 + [瀑布流](https://femonster.github.io/p-exercise/waterfall/index.html)(PC)
++ [自定义滚动条](https://femonster.github.io/p-exercise/scrollBar4.html)(PC)
+
 
 ### 3.css
 + [css3帧动画](https://femonster.github.io/p-exercise/css3zhen/index.html)
