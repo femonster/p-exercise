@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html font-size=>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css/com.css" />
+		<meta http-equiv=X-UA-Compatible content="IE=edge">
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script src="js/echarts.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<title></title>
+	</head>
+	<body>
+		<div class="main_bg">
+			<div class="head">
+			</div>
+			<div class="body-panel absolute left">
+				<div class="panel">
+					<div class="panel-header"></div>
+					<div class="panel-body data1">
+						<div class="row">
+							<div class="col-50">L-CNG加气站数量</div>
+							<div class="col-50 text-right"><span class="f180 fchighBlue bold">15</span> 座</div>
+						</div>
+						<div class="row">
+							<div class="col-50">CNG加气站数量</div>
+							<div class="col-50 text-right"><span  class="f180 fchighBlue bold">4</span> 座</div>
+						</div>
+						<div class="row">
+							<div class="col-50">LNG加气站数量</div>
+							<div class="col-50 text-right"><span  class="f180 fchighBlue bold">56</span> 座</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel2">
+					<div class="panel-header"></div>
+					<div class="panel-body">
+						<div class="row text-center">
+							<div class="col-50">
+								<div class="data1_bg">
+									<h1 class="f180 fchighBlue">410 吨</h1>
+									<p class="f24">前日销量</p>
+								</div>
+							</div>
+							<div class="col-50">
+								<div class="data1_bg">
+									<h1 class="f180 fchighBlue">12150 吨</h1>
+									<p class="f24">上月累计</p>
+								</div>
+							</div>
+						</div>
+						<!---->
+						<div class="roll">
+							
+						</div>
+						<div id="char01" class="char01"></div>
+					</div>
+				</div>
+				<div class="panel ">
+					<div class="panel-header"></div>
+					<div class="panel-body data3">
+						<div class="row">
+							<div class="col-20"><img src="images/icon_01.png" class="icon"></div>
+							<div class="col-50">安全无事故运行天数</div>
+							<div class="col-30 text-right"><span  class="f180 fchighBlue bold">2795</span> 天</div>
+						</div>
+						<div class="row">
+							<div class="col-20"><img src="images/icon_02.png" class="icon"></div>
+							<div class="col-50">加气站在岗人数</div>
+							<div class="col-30 text-right"><span  class="f180 fchighBlue bold">375</span> 人</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="body-panel  center">
+				<div class="map">
+					<div id="mapPoint"></div>
+				</div>
+				<div class="mapEnter"><a href="bigmap.jpg" target="_blank"></a></div>
+			</div>
+			<div class="body-panel absolute right">
+				<div class="panel panel3">
+					<div class="panel-header"></div>
+					<div class="panel-body ">
+						<div class="data4">
+						<div class="row">
+							<div class="col-50">站点总数</div>
+							<div class="col-50 text-right"><span  class="f180 fchighBlue bold">298</span> 座</div>
+						</div>
+						<div class="row">
+							<div class="col-50"><span class="bggreen">运行数量</span></div>
+							<div class="col-50 text-right"><span  class="f180 fcgreen bold">75</span> 座</div>
+						</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel3">
+					<div class="panel-header"></div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-50">L-CNG加气站数量</div>
+							<div class="col-50 text-right"><span class="f180 fchighBlue bold">57</span> 座</div>
+						</div>
+						<div class="row">
+							<div class="col-50">CNG加气站数量</div>
+							<div class="col-50 text-right"><span  class="f180 fchighBlue bold">176</span> 座</div>
+						</div>
+						<div class="row">
+							<div class="col-50">LNG加气站数量</div>
+							<div class="col-50 text-right"><span  class="f180 fchighBlue bold">67</span> 座</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel4">
+					<div class="panel-header"></div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-50">CNG加气站数量</div>
+							<div class="col-50 text-right"><span  class="f180 fchighBlue bold">286</span> 座</div>
+						</div>
+						<div class="row">
+							<div class="col-50">LNG加气站数量</div>
+							<div class="col-50 text-right"><span  class="f180 fchighBlue bold">12</span> 座</div>
+						</div>
+						<div class="row">
+							<div class="col-50">省内市场占有率</div>
+							<div class="col-50 text-right"><span  class="f180 fchighBlue bold">42%</span></div>
+						</div>
+						<table class="table">
+							<thead>
+								<tr>
+									<th>大同</th>
+									<th>24</th>
+									<th>26 </th>
+									<th>50</th>
+									<th>48%</th>
+								</tr>
+							</thead>
+							<tbody class="atable_body">
+								<tr>
+									<td>朔州</td>
+									<td>20</td>
+									<td>7 </td>
+									<td>27</td>
+									<td>74%</td>
+								</tr>
+								<tr>
+									<td>忻州</td>
+									<td>41</td>
+									<td>19 </td>
+									<td>60</td>
+									<td>68%</td>
+								</tr>
+								<tr>
+									<td>吕梁</td>
+									<td>37</td>
+									<td>68 </td>
+									<td>105</td>
+									<td>35%</td>
+								</tr>
+								<tr>
+									<td>阳泉</td>
+									<td>12</td>
+									<td>5 </td>
+									<td>17</td>
+									<td>70%</td>
+								</tr>
+								<tr>
+									<td>晋中</td>
+									<td>26</td>
+									<td>34 </td>
+									<td>60</td>
+									<td>43%</td>
+								</tr>
+								<tr>
+									<td>临汾</td>
+									<td>21</td>
+									<td>20 </td>
+									<td>41</td>
+									<td>51%</td>
+								</tr>
+								<tr>
+									<td>长治</td>
+									<td>38</td>
+									<td>29 </td>
+									<td>67</td>
+									<td>56%</td>
+								</tr>
+								<tr>
+									<td>晋城</td>
+									<td>30</td>
+									<td>12 </td>
+									<td>42</td>
+									<td>71%</td>
+								</tr>
+								<tr>
+									<td>运城</td>
+									<td>37</td>
+									<td>57 </td>
+									<td>94</td>
+									<td>39%</td>
+								</tr>
+								
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+	</body>
+</html>
+<script src="js/flexible.js"></script>
+<script src="api/chart_data.js"></script>
+<script src="api/map_data.js"></script>

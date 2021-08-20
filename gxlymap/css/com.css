@@ -1,0 +1,1039 @@
+a,
+a:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+.fcblue {
+  color: #25a1dd;
+}
+.fcgreen {
+  color: #30ff79;
+}
+.fcyellow {
+  color: #ffd801;
+}
+.fcyellow {
+  color: #ffd801;
+}
+.fchighBlue {
+  color: #16e1d8;
+}
+.fcGley {
+  color: #a3a5a6;
+}
+.border_bottom {
+  border-bottom: 1px solid #25a1dd;
+}
+.border_bottom_gley {
+  border-bottom: 1px solid rgba(0, 180, 255, 0.2);
+}
+.f100 {
+  font-size: 0.07440476rem;
+}
+.f180 {
+  font-size: 0.13392857rem;
+}
+::-webkit-scrollbar {
+  width: 5px;
+  height: 1px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 0px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background: #336aa2;
+}
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background: transparent;
+}
+html,
+body,
+p {
+  margin: 0;
+  padding: 0;
+  font-family: "微软雅黑";
+}
+dt,
+dd,
+body,
+html,
+h3,
+h1,
+h2,
+h4,
+p,
+ul,
+li {
+  padding: 0px;
+  margin: 0px;
+}
+.row {
+  clear: both;
+  display: block;
+}
+.col-10,
+.col-20,
+.col-30,
+.col-40,
+.col-50,
+.col-60,
+.col-70,
+.col-80,
+.col-90,
+.col-100,
+.col-25,
+.col-33,
+.col-75 {
+  float: left;
+  position: relative;
+  min-height: 1px;
+}
+.col-10 {
+  width: 10%;
+}
+.col-20 {
+  width: 20%;
+}
+.col-30 {
+  width: 30%;
+}
+.col-40 {
+  width: 40%;
+}
+.col-50 {
+  width: 50%;
+}
+.col-60 {
+  width: 60%;
+}
+.col-70 {
+  width: 70%;
+}
+.col-80 {
+  width: 80%;
+}
+.col-90 {
+  width: 90%;
+}
+.col-100 {
+  width: 100%;
+}
+.col-25 {
+  width: 25%;
+}
+.col-33 {
+  width: 33.333%;
+}
+.col-75 {
+  width: 75%;
+}
+.row:after {
+  content: "";
+  height: 1px;
+  display: block;
+  clear: both;
+  width: 100%;
+}
+.img-responsive {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  background: url(../images/background_img.jpg);
+  background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.main_bg {
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  background: url(../images/map-bj.png) no-repeat;
+  background-size: 100% 100%;
+  width: 10rem;
+  height: 4.82142857rem;
+}
+.head {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 998;
+  line-height: 0.65922619rem;
+  width: 100%;
+  height: 0.65922619rem;
+}
+.body-panel {
+  top: 0.6547619rem;
+  font-size: 0.07440476rem;
+}
+.panel {
+  width: 2.12053571rem;
+  height: 1.19047619rem;
+  margin-bottom: 0.00744048rem;
+}
+.panel .panel-header {
+  position: relative;
+  height: 0.25297619rem;
+}
+.panel .panel-body {
+  padding: 0.01488095rem 0.01488095rem;
+  min-height: 0.03720238rem;
+  display: block;
+}
+.panel2 {
+  height: 1.75744048rem;
+  width: 2.23214286rem;
+}
+.panel3 {
+  height: 0.89285714rem;
+}
+.panel3 .panel-header {
+  height: 0.19345238rem;
+}
+.panel4 {
+  height: 2.20238095rem;
+  line-height: 0.11904762rem;
+}
+.panel4 .panel-header {
+  height: 0.11904762rem;
+}
+.bold {
+  font-weight: bold;
+}
+.img-responsive {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.absolute {
+  position: absolute;
+  z-index: 99;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.left {
+  left: 0.47619048rem;
+}
+.right {
+  right: 0.47619048rem;
+}
+.center {
+  position: absolute;
+  z-index: 100;
+  top: 0.56919643rem;
+  left: 3.67559524rem;
+  right: 3.67559524rem;
+}
+.row_title {
+  display: block;
+  color: #fff;
+  border-bottom: 1px solid rgba(0, 180, 255, 0.2);
+  padding: 0.01488095rem 0;
+}
+.table {
+  font-size: 0.07440476rem;
+  width: 100%;
+  margin: 0.01488095rem auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-top: 1px solid rgba(0, 180, 255, 0.3);
+  border-bottom: 1px solid rgba(0, 180, 255, 0.3);
+}
+.table th,
+.table td {
+  color: #fff;
+  text-align: center;
+  border-top: 1px solid rgba(0, 180, 255, 0.3);
+  border-right: 1px solid rgba(0, 180, 255, 0.3);
+}
+.table th:last-child,
+.table td:last-child {
+  border-right: 0px;
+}
+.table tr th {
+  cursor: pointer;
+}
+.table tr:nth-child(even) td {
+  background-color: rgba(0, 180, 255, 0.1);
+}
+.table thead tr th {
+  background-color: rgba(0, 180, 255, 0.3);
+  color: #16e1d8;
+}
+.mapEnter {
+  width: 0.42782738rem;
+  height: 0.48363095rem;
+  position: absolute;
+  z-index: 10;
+  left: 2.16517857rem;
+  top: 3.4546131rem;
+}
+.mapEnter a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.map {
+  position: relative;
+  background: url(../images/map.png) no-repeat;
+  width: 2.35491071rem;
+  height: 4.02901786rem;
+  background-size: 100% 100%;
+}
+.map li {
+  width: 0.07626488rem;
+  height: 0.1078869rem;
+  display: block;
+  position: absolute;
+}
+.map .name {
+  position: absolute;
+  left: 0.13392857rem;
+  top: 0;
+  min-width: 180px;
+  width: 0.13392857rem;
+}
+.map .tooltip {
+  display: none;
+  position: absolute;
+  min-width: 350px;
+  width: 2rem;
+  padding: 0.07440476rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 3px solid rgba(0, 180, 255, 0.5);
+  z-index: 998;
+  border-radius: 0.0297619rem;
+}
+.map .tooltip .table td {
+  text-align: left;
+}
+.map .tooltip .table .sname {
+  width: 80px;
+}
+.map .lng .point {
+  background: url(../images/green_L.png) no-repeat;
+  background-size: 100% 100%;
+}
+.map .cng .point {
+  background: url(../images/green_C.png) no-repeat;
+  background-size: 100% 100%;
+}
+.map .lcng .point {
+  background: url(../images/green_H.png) no-repeat;
+  background-size: 100% 100%;
+}
+.map .slng .point {
+  background: url(../images/red_L.png) no-repeat;
+  background-size: 100% 100%;
+}
+.map .scng .point {
+  background: url(../images/red_C.png) no-repeat;
+  background-size: 100% 100%;
+}
+.map .slcng .point {
+  background: url(../images/red_H.png) no-repeat;
+  background-size: 100% 100%;
+}
+.map .point {
+  width: 0.07626488rem;
+  margin-left: -0.03809524rem;
+  height: 0.1078869rem;
+  margin-top: -0.05357143rem;
+}
+.map li:hover {
+  border: 0px solid #25a1dd;
+  z-index: 999;
+}
+.map li:hover .tooltip {
+  display: block;
+}
+.tablebox {
+  height: 0.17857143rem;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin: auto;
+}
+.tbl-header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: #001432;
+  height: 0.03125rem;
+}
+.tbl-body {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.tablebox table {
+  width: 100%;
+}
+.tablebox table th,
+.tablebox table td {
+  font-size: 0.00744048rem;
+  color: #fff;
+  line-height: 0.03125rem;
+  text-align: center;
+}
+.tablebox table th span,
+.tablebox table td span {
+  line-height: 0.02529762rem;
+  border: 1px solid rgba(0, 180, 255, 0.5);
+  width: 0.02529762rem;
+  height: 0.02232143rem;
+  display: block;
+  margin: auto;
+}
+.tablebox table tr th {
+  cursor: pointer;
+}
+.tbl-body tr:nth-child(even) td,
+.tbl-body1 tr:nth-child(even) td {
+  background-color: rgba(0, 180, 255, 0.2);
+  border-bottom: 1px solid rgba(0, 180, 255, 0.5);
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.data1,
+.data3 {
+  line-height: 0.22321429rem;
+}
+.data1 .icon,
+.data3 .icon {
+  width: 0.22321429rem;
+  height: 0.22321429rem;
+}
+.data4 {
+  padding-left: 0.81845238rem;
+  line-height: 0.23809524rem;
+}
+.data4 .bggreen {
+  padding: 0.01488095rem 0.0297619rem;
+  border-radius: 0.03720238rem;
+  background-color: #2cab38;
+  color: #fff;
+}
+.char01 {
+  width: 100%;
+  height: 0.86309524rem;
+}
+.roll {
+  margin: 0.05952381rem 0;
+  display: block;
+  height: 0.14880952rem;
+  line-height: 0.14880952rem;
+  border-bottom: 1px solid rgba(0, 180, 255, 0.2);
+  border-left: 0px;
+  border-right: 0px;
+}
+#point102 .tooltip,
+#point103 .tooltip,
+#point104 .tooltip,
+#point105 .tooltip,
+#point106 .tooltip,
+#point107 .tooltip,
+#point108 .tooltip,
+#point109 .tooltip,
+#point110 .tooltip,
+#point111 .tooltip,
+#point112 .tooltip,
+#point113 .tooltip,
+#point114 .tooltip,
+#point115 .tooltip,
+#point116 .tooltip,
+#point117 .tooltip,
+#point118 .tooltip,
+#point119 .tooltip,
+#point120 .tooltip,
+#point121 .tooltip,
+#point122 .tooltip,
+#point123 .tooltip,
+#point124 .tooltip,
+#point125 .tooltip,
+#point126 .tooltip,
+#point127 .tooltip,
+#point128 .tooltip,
+#point129 .tooltip,
+#point130 .tooltip,
+#point131 .tooltip,
+#point132 .tooltip,
+#point133 .tooltip,
+#point134 .tooltip,
+#point135 .tooltip,
+#point136 .tooltip,
+#point137 .tooltip {
+  bottom: 0.16369048rem;
+}
+#point1 {
+  left: 2.03720238rem;
+  top: 0.14583333rem;
+}
+#point2 {
+  left: 1.94940476rem;
+  top: 0.19940476rem;
+}
+#point3 {
+  left: 1.8764881rem;
+  top: 0.29389881rem;
+}
+#point4 {
+  left: 1.62574405rem;
+  top: 0.30877976rem;
+}
+#point5 {
+  left: 1.42931548rem;
+  top: 0.421875rem;
+}
+#point6 {
+  left: 1.9672619rem;
+  top: 0.42782738rem;
+}
+#point7 {
+  left: 1.64657738rem;
+  top: 0.55654762rem;
+}
+#point8 {
+  left: 1.5639881rem;
+  top: 0.6733631rem;
+}
+#point9 {
+  left: 1.56696429rem;
+  top: 0.71502976rem;
+}
+#point10 {
+  left: 1.8578869rem;
+  top: 0.72172619rem;
+}
+#point11 {
+  left: 1.48958333rem;
+  top: 0.78571429rem;
+}
+#point12 {
+  left: 1.48735119rem;
+  top: 0.79315476rem;
+}
+#point13 {
+  left: 2.12276786rem;
+  top: 0.83482143rem;
+}
+#point14 {
+  left: 1.45907738rem;
+  top: 0.81845238rem;
+}
+#point15 {
+  left: 1.85714286rem;
+  top: 0.94419643rem;
+}
+#point16 {
+  left: 1.9702381rem;
+  top: 0.99479167rem;
+}
+#point17 {
+  left: 1.72916667rem;
+  top: 0.98065476rem;
+}
+#point18 {
+  left: 1.546875rem;
+  top: 1.05059524rem;
+}
+#point19 {
+  left: 1.5483631rem;
+  top: 1.05133929rem;
+}
+#point20 {
+  left: 1.59449405rem;
+  top: 1.01264881rem;
+}
+#point21 {
+  left: 1.14657738rem;
+  top: 1.03645833rem;
+}
+#point138 {
+  left: 1.15178571rem;
+  top: 1.05952381rem;
+}
+#point22 {
+  left: 1.07886905rem;
+  top: 1.09077381rem;
+}
+#point23 {
+  left: 0.90550595rem;
+  top: 1.05059524rem;
+}
+#point24 {
+  left: 0.86309524rem;
+  top: 1.07068452rem;
+}
+#point25 {
+  left: 0.9233631rem;
+  top: 1.10119048rem;
+}
+#point26 {
+  left: 0.94270833rem;
+  top: 1.13095238rem;
+}
+#point27 {
+  left: 0.64732143rem;
+  top: 1.01934524rem;
+}
+#point28 {
+  left: 0.64434524rem;
+  top: 1.0625rem;
+}
+#point29 {
+  left: 0.41815476rem;
+  top: 1.01934524rem;
+}
+#point30 {
+  left: 0.43154762rem;
+  top: 1.07217262rem;
+}
+#point31 {
+  left: 0.4858631rem;
+  top: 1.14360119rem;
+}
+#point32 {
+  left: 0.90252976rem;
+  top: 1.21205357rem;
+}
+#point33 {
+  left: 0.88169643rem;
+  top: 1.24776786rem;
+}
+#point34 {
+  left: 0.84300595rem;
+  top: 1.27455357rem;
+}
+#point35 {
+  left: 1.36309524rem;
+  top: 1.20610119rem;
+}
+#point36 {
+  left: 1.71056548rem;
+  top: 1.31473214rem;
+}
+#point37 {
+  left: 1.78497024rem;
+  top: 1.33928571rem;
+}
+#point38 {
+  left: 1.77008929rem;
+  top: 1.453125rem;
+}
+#point39 {
+  left: 1.41369048rem;
+  top: 1.43824405rem;
+}
+#point40 {
+  left: 1.3891369rem;
+  top: 1.43973214rem;
+}
+#point41 {
+  left: 1.08333333rem;
+  top: 1.48363095rem;
+}
+#point42 {
+  left: 1.15848214rem;
+  top: 1.53050595rem;
+}
+#point43 {
+  left: 0.85119048rem;
+  top: 1.53794643rem;
+}
+#point44 {
+  left: 0.90997024rem;
+  top: 1.57068452rem;
+}
+#point45 {
+  left: 1.35863095rem;
+  top: 1.73660714rem;
+}
+#point46 {
+  left: 1.36532738rem;
+  top: 1.78050595rem;
+}
+#point47 {
+  left: 1.50223214rem;
+  top: 1.77827381rem;
+}
+#point48 {
+  left: 1.52604167rem;
+  top: 1.83333333rem;
+}
+#point49 {
+  left: 1.65699405rem;
+  top: 1.68824405rem;
+}
+#point50 {
+  left: 1.61383929rem;
+  top: 1.80505952rem;
+}
+#point51 {
+  left: 1.77157738rem;
+  top: 1.74627976rem;
+}
+#point52 {
+  left: 1.80729167rem;
+  top: 1.7358631rem;
+}
+#point53 {
+  left: 1.86011905rem;
+  top: 1.77008929rem;
+}
+#point54 {
+  left: 1.95535714rem;
+  top: 1.77157738rem;
+}
+#point55 {
+  left: 1.88244048rem;
+  top: 1.80282738rem;
+}
+#point56 {
+  left: 1.84747024rem;
+  top: 1.84598214rem;
+}
+#point57 {
+  left: 1.83333333rem;
+  top: 1.86607143rem;
+}
+#point58 {
+  left: 1.88318452rem;
+  top: 1.85639881rem;
+}
+#point59 {
+  left: 1.30208333rem;
+  top: 1.88020833rem;
+}
+#point60 {
+  left: 1.3125rem;
+  top: 1.9375rem;
+}
+#point61 {
+  left: 1.29761905rem;
+  top: 1.97172619rem;
+}
+#point62 {
+  left: 1.5141369rem;
+  top: 1.96428571rem;
+}
+#point63 {
+  left: 1.4360119rem;
+  top: 2.02901786rem;
+}
+#point64 {
+  left: 1.06473214rem;
+  top: 1.86607143rem;
+}
+#point65 {
+  left: 1.13095238rem;
+  top: 2.04315476rem;
+}
+#point66 {
+  left: 1.27455357rem;
+  top: 2.10565476rem;
+}
+#point67 {
+  left: 1.26934524rem;
+  top: 2.1577381rem;
+}
+#point68 {
+  left: 1.43452381rem;
+  top: 2.11904762rem;
+}
+#point69 {
+  left: 1.86011905rem;
+  top: 2.10119048rem;
+}
+#point70 {
+  left: 0.41294643rem;
+  top: 2.1235119rem;
+}
+#point71 {
+  left: 0.77455357rem;
+  top: 2.30952381rem;
+}
+#point72 {
+  left: 0.63839286rem;
+  top: 2.1860119rem;
+}
+#point73 {
+  left: 1.171875rem;
+  top: 2.21130952rem;
+}
+#point74 {
+  left: 1.14136905rem;
+  top: 2.18303571rem;
+}
+#point75 {
+  left: 0.86830357rem;
+  top: 2.25rem;
+}
+#point76 {
+  left: 0.88392857rem;
+  top: 2.27157738rem;
+}
+#point77 {
+  left: 0.90327381rem;
+  top: 2.30431548rem;
+}
+#point78 {
+  left: 1.11607143rem;
+  top: 2.21949405rem;
+}
+#point79 {
+  left: 1.11383929rem;
+  top: 2.2953869rem;
+}
+#point80 {
+  left: 1.15848214rem;
+  top: 2.3266369rem;
+}
+#point81 {
+  left: 1.29166667rem;
+  top: 2.2358631rem;
+}
+#point82 {
+  left: 1.27752976rem;
+  top: 2.27901786rem;
+}
+#point83 {
+  left: 1.49479167rem;
+  top: 2.30803571rem;
+}
+#point84 {
+  left: 1.72172619rem;
+  top: 2.34821429rem;
+}
+#point85 {
+  left: 1.48958333rem;
+  top: 2.5327381rem;
+}
+#point86 {
+  left: 1.36755952rem;
+  top: 2.55059524rem;
+}
+#point87 {
+  left: 1.3921131rem;
+  top: 2.56919643rem;
+}
+#point88 {
+  left: 0.88616071rem;
+  top: 2.63988095rem;
+}
+#point89 {
+  left: 0.89285714rem;
+  top: 2.6889881rem;
+}
+#point90 {
+  left: 0.58928571rem;
+  top: 2.75595238rem;
+}
+#point91 {
+  left: 1.0766369rem;
+  top: 2.7827381rem;
+}
+#point92 {
+  left: 1.171875rem;
+  top: 2.74032738rem;
+}
+#point93 {
+  left: 1.46056548rem;
+  top: 2.70684524rem;
+}
+#point94 {
+  left: 1.54017857rem;
+  top: 2.76041667rem;
+}
+#point95 {
+  left: 1.52901786rem;
+  top: 2.74627976rem;
+}
+#point96 {
+  left: 1.52083333rem;
+  top: 2.79241071rem;
+}
+#point97 {
+  left: 1.52827381rem;
+  top: 2.82217262rem;
+}
+#point98 {
+  left: 1.7016369rem;
+  top: 2.75595238rem;
+}
+#point99 {
+  left: 1.61681548rem;
+  top: 2.86532738rem;
+}
+#point100 {
+  left: 1.52083333rem;
+  top: 2.86532738rem;
+}
+#point101 {
+  left: 1.53720238rem;
+  top: 2.93303571rem;
+}
+#point102 {
+  left: 1.58184524rem;
+  top: 2.95089286rem;
+}
+#point103 {
+  left: 1.53348214rem;
+  top: 3.01041667rem;
+}
+#point104 {
+  left: 1.52008929rem;
+  top: 3.07514881rem;
+}
+#point105 {
+  left: 1.02232143rem;
+  top: 2.90178571rem;
+}
+#point106 {
+  left: 0.75595238rem;
+  top: 2.97619048rem;
+}
+#point107 {
+  left: 0.7953869rem;
+  top: 2.97619048rem;
+}
+#point108 {
+  left: 0.96279762rem;
+  top: 3.078125rem;
+}
+#point109 {
+  left: 0.38839286rem;
+  top: 3.21354167rem;
+}
+#point110 {
+  left: 0.34895833rem;
+  top: 3.25744048rem;
+}
+#point111 {
+  left: 0.38095238rem;
+  top: 3.30431548rem;
+}
+#point112 {
+  left: 0.37946429rem;
+  top: 3.32589286rem;
+}
+#point113 {
+  left: 0.39732143rem;
+  top: 3.40848214rem;
+}
+#point114 {
+  left: 0.63467262rem;
+  top: 3.19940476rem;
+}
+#point115 {
+  left: 0.55803571rem;
+  top: 3.22619048rem;
+}
+#point116 {
+  left: 0.51934524rem;
+  top: 3.26190476rem;
+}
+#point117 {
+  left: 0.53199405rem;
+  top: 3.30133929rem;
+}
+#point118 {
+  left: 0.68675595rem;
+  top: 3.17113095rem;
+}
+#point119 {
+  left: 0.84300595rem;
+  top: 3.20982143rem;
+}
+#point120 {
+  left: 0.77529762rem;
+  top: 3.27008929rem;
+}
+#point121 {
+  left: 0.76488095rem;
+  top: 3.27380952rem;
+}
+#point123 {
+  left: 0.92113095rem;
+  top: 3.17708333rem;
+}
+#point124 {
+  left: 1.09151786rem;
+  top: 3.21279762rem;
+}
+#point125 {
+  left: 1.19717262rem;
+  top: 3.26041667rem;
+}
+#point126 {
+  left: 1.2797619rem;
+  top: 3.33928571rem;
+}
+#point127 {
+  left: 1.38392857rem;
+  top: 3.35491071rem;
+}
+#point128 {
+  left: 1.5rem;
+  top: 3.21875rem;
+}
+#point129 {
+  left: 1.50595238rem;
+  top: 3.25892857rem;
+}
+#point130 {
+  left: 1.45386905rem;
+  top: 3.34300595rem;
+}
+#point131 {
+  left: 0.39732143rem;
+  top: 3.39806548rem;
+}
+#point132 {
+  left: 0.61011905rem;
+  top: 3.42410714rem;
+}
+#point133 {
+  left: 0.57589286rem;
+  top: 3.48139881rem;
+}
+#point134 {
+  left: 0.86830357rem;
+  top: 3.44791667rem;
+}
+#point135 {
+  left: 0.4858631rem;
+  top: 3.61979167rem;
+}
+#point136 {
+  left: 0.26860119rem;
+  top: 3.68080357rem;
+}
+#point137 {
+  left: 0.60267857rem;
+  top: 3.77678571rem;
+}
